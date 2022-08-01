@@ -3,12 +3,17 @@
  */
 package football.exercise;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+// import java.io.FileReader;
+// import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -28,6 +33,7 @@ public class App {
         // getMatchStatitics(homeTeam, awayTeam);
         
         getAllLeagues();
+        // getSomeLeagues();
     }
 
     static void getTableResultsForLeague(String league){
@@ -53,6 +59,11 @@ public class App {
             ex.printStackTrace();
         }
     }
+
+    public static void getSomeLeagues(){
+        
+    }
+
   }
 
 
