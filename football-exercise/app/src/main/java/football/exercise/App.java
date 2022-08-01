@@ -41,24 +41,18 @@ public class App {
     public static void getAllLeagues(){
         try {
             // create a reader
-            Reader reader = Files.newBufferedReader(Paths.get("/Users/davidhoupapa/Code/football-exercise/app/src/main/java/football/exercise/data/users.json"));
+            Reader reader = Files.newBufferedReader(Paths.get("/Users/davidhoupapa/Code/football-exercise/app/src/main/java/football/exercise/data/leagues.json"));
         
-            // convert JSON array to list of users
-            List<User> users = new Gson().fromJson(reader, new TypeToken<List<User>>() {}.getType());
-    
-            // System.out.print(users);
-            System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(users));
-        
-            // print users
-            users.forEach(System.out::println);
-        
-            // close reader
+            // convert JSON array to list of leagues
+            List<Leagues> leagueList = new Gson().fromJson(reader, new TypeToken<List<Leagues>>() {}.getType());    
+            System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(leagueList));        
+            leagueList.forEach(System.out::println);       
             reader.close();
         
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-    }    
+    }
   }
 
 

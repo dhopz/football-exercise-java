@@ -6,9 +6,6 @@ public class User {
     private String[] roles;
     private boolean admin;
 
-    public User() {
-    }
-
     public User(String name, String email, String[] roles, boolean admin) {
         this.name = name;
         this.email = email;
