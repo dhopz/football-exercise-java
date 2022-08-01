@@ -1,13 +1,14 @@
 package football.exercise;
 
 public class Teams {
-    public String name;
+    public String shortName;
     public String teamMembers;
     public String startingPositions;
     public String substitutes;
+    public String longName;
 
     public Teams(String name) {
-        this.name = name;
+        this.shortName = name;
     }
     
 }
