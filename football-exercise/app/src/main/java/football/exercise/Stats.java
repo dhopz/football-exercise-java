@@ -1,7 +1,7 @@
 package football.exercise;
 
 public class Stats {
-    public Integer goals = 0;
+    private Integer goals = 0;
     public Integer redCards = 0;
     public Integer yellowCards = 0;
     public Double possesion;
