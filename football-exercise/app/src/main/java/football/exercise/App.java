@@ -12,8 +12,9 @@ public class App {
     public static ArrayList<Stats> footballStats = new ArrayList<Stats>();
 
     public static void main(String[] args) {
-        ArrayList<Leagues> allLeagues = createLeagues();
-        System.out.println(allLeagues);
+        Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
+        game.getMatchStatitics();
+
         
     }
 

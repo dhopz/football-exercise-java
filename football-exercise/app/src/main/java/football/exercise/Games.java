@@ -2,6 +2,9 @@ package football.exercise;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
 
 public class Games {
     public Integer id;
@@ -35,10 +38,21 @@ public class Games {
             yellowCards);
     }
 
-    public ArrayList<Games> getMatchStatitics() {
-        ArrayList<Games> games = new ArrayList<Games>();
+    public HashMap<String, String> getMatchStatitics() {
         //Create a function for each game, get the statistics of the match
-        return games;
+        //{location:Stamford Bridge,hometeam:Chelsea,homeGoals:2,awayTeam:Arsenal,awayGoals:1,redCards:0,yellowCards:2}
+        HashMap<String, String> stringData = new HashMap<>();
+        stringData.put("location",this.location);
+        stringData.put("homeTeam",this.homeTeam);
+        stringData.put("awayTeam",this.awayTeam);
+        
+        HashMap<String,String> intergerData = stats.gameResults();
+
+        stringData.putAll(intergerData);
+
+        System.out.println(stringData);
+        
+        return stringData;
         
     }
 
