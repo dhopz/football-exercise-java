@@ -49,8 +49,6 @@ public class Games {
         HashMap<String,String> intergerData = stats.gameResults();
 
         stringData.putAll(intergerData);
-
-        System.out.println(stringData);
         
         return stringData;
         

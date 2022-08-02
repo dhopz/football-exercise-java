@@ -4,6 +4,7 @@
 package football.exercise;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class App {
     public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
@@ -12,8 +13,10 @@ public class App {
     public static ArrayList<Stats> footballStats = new ArrayList<Stats>();
 
     public static void main(String[] args) {
-        Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
-        game.getMatchStatitics();
+        // Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
+        // game.getMatchStatitics();
+
+        createGames();
 
         
     }
@@ -22,12 +25,8 @@ public class App {
         // create Table of Results given the league parameter
     }
 
-    public static void getMatchStatitics(String homeTeam, String awayTeam){
+    public static void getMatchStatistics(String homeTeam, String awayTeam){
         // given 2 parameters, get the statistics for the game
-    }
-
-    public static void getSomeLeagues(){
-        
     }
 
     public static ArrayList<Leagues> createLeagues(){
@@ -41,20 +40,37 @@ public class App {
         return footballLeagues;
     }
 
-    public ArrayList<Games> createGames(){
-        Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
+    public static void createGames(){
+        Games game = new Games(1, "Chelsea", "Arsenal", "Stamford Bridge", 2, 1, 0, 3);
         Games game2 = new Games(2, "Liverpool", "Everton", "Anfield", 3, 2, 0, 1);
-        // Games game3 = new Games()
+        Games game3 = new Games(2, "Chelsea", "Everton", "Stamford  Bridge", 4, 2, 0, 1);
+        Games game4 = new Games(2, "Liverpool", "Chelsea", "Anfield", 0, 2, 0, 1);
+
 
         footballGames.add(game);
         footballGames.add(game2);
+        footballGames.add(game3);
+        footballGames.add(game4);
 
-        return footballGames;        
+        ArrayList<HashMap<String, String>> gameResults = new ArrayList<HashMap<String, String>>();
+
+        String teamToLocate = "Chelsea";
+
+        for (Games footballGame: footballGames){
+            if(footballGame.homeTeam==teamToLocate||footballGame.awayTeam==teamToLocate){
+                gameResults.add(footballGame.getMatchStatitics());
+            }            
+        }
+
+        System.out.println(gameResults);
+        System.out.printf("Amount of Games in Array %d \n",gameResults.size());
+
+        // return footballGames;        
     }
 
-    public ArrayList<Teams> createTeams(){
+    public static ArrayList<Teams> createTeams(){
         Teams team = new Teams("CHE","Chelsea");
-        Teams teama = new Teams("ARS","Aresnal");
+        Teams teama = new Teams("ARS","Arsenal");
         Teams teamb = new Teams("LIV","Liverpool");
         Teams teamc = new Teams("EVE","Everton");
 
@@ -67,7 +83,7 @@ public class App {
 
     }
 
-    public ArrayList<Stats> createStats(){
+    public static ArrayList<Stats> createStats(){
         Stats stat = new Stats(1, 2, 1, 0, 3);
         Stats stata = new Stats(2, 2, 1, 0, 3);
 
