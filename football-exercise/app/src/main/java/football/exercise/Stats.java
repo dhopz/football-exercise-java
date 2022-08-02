@@ -15,7 +15,7 @@ public class Stats {
     public Integer offsides;
     public Integer foulsConceded;
 
-    public Stats(){
+    public Stats(Integer id){
         // this.goals = 0; 
         // this.redCards = 0;
 
@@ -23,6 +23,11 @@ public class Stats {
 
     public Integer getGoals(){
         return this.goals;
+    }
+
+    public static void gameResults(){
+        //Function to create the results based on the statistics provided
+        //return an ArrayList
     }
     
 }
