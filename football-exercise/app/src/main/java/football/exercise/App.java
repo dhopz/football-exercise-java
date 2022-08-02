@@ -58,7 +58,7 @@ public class App {
 
         for (Games footballGame: footballGames){
             if(footballGame.homeTeam==teamToLocate||footballGame.awayTeam==teamToLocate){
-                gameResults.add(footballGame.getMatchStatitics());
+                gameResults.add(footballGame.getMatchResults());
             }            
         }
 

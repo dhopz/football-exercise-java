@@ -1,10 +1,7 @@
 package football.exercise;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-
-import org.json.simple.JSONObject;
 
 public class Games {
     public Integer id;
@@ -38,7 +35,7 @@ public class Games {
             yellowCards);
     }
 
-    public HashMap<String, String> getMatchStatitics() {
+    public HashMap<String, String> getMatchResults() {
         //Create a function for each game, get the statistics of the match
         //{location:Stamford Bridge,hometeam:Chelsea,homeGoals:2,awayTeam:Arsenal,awayGoals:1,redCards:0,yellowCards:2}
         HashMap<String, String> stringData = new HashMap<>();
