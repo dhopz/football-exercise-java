@@ -1,6 +1,6 @@
 package football.exercise;
 
-import java.util.HashMap;
+// import java.util.HashMap;
 
 // import java.io.FileReader;
 // import java.io.IOException;

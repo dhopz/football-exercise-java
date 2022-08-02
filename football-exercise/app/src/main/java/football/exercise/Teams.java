@@ -4,8 +4,9 @@ public class Teams {
     public String shortName;
     public String longName;
 
-    public Teams(String name) {
-        this.shortName = name;
+    public Teams(String shortName, String longName) {
+        this.shortName = shortName;
+        this.longName = longName;
     }
 
     public void getMatchResults(){
