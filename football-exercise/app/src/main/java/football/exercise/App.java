@@ -6,6 +6,7 @@ package football.exercise;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 public class App {
     public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
     public static ArrayList<Games> footballGames = new ArrayList<Games>();
@@ -41,6 +42,42 @@ public class App {
     }
 
     public static void createGames(){
+        String[] clubs = {
+            "Bournemouth",
+            "Arsenal",
+            "Aston Villa",
+            "Brentford",
+            "Brighton",
+            "Chelsea",
+            "Crystal Palace", 
+            "Everton",
+            "Fulham",
+            "Leeds", 
+            "Leicester City", 
+            "Liverpool", 
+            "Man City", 
+            "Man United",
+            "Newcastle",
+            "Nottingham Forest", 
+            "Southampton",
+            "Tottenham",
+            "West Ham", 
+            "Wolves"
+        };
+
+        System.out.println(clubs.length);
+
+        for (String club: clubs){
+            Integer i = 0;
+            if(club == clubs[i]) continue;
+
+            System.out.println(club);
+            i++;
+            }
+            
+        
+
+
         Games game = new Games(1, "Chelsea", "Arsenal", "Stamford Bridge", 2, 1, 0, 3);
         Games game2 = new Games(2, "Liverpool", "Everton", "Anfield", 3, 2, 0, 1);
         Games game3 = new Games(2, "Chelsea", "Everton", "Stamford  Bridge", 4, 2, 0, 1);
@@ -62,8 +99,7 @@ public class App {
             }            
         }
 
-        System.out.println(gameResults);
-        System.out.printf("Amount of Games in Array %d \n",gameResults.size());
+        System.out.println(gameResults);        System.out.printf("Amount of Games in Array %d \n",gameResults.size());
 
         // return footballGames;        
     }
