@@ -17,7 +17,9 @@ public class App {
         // Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
         // game.getMatchStatitics();
 
-        createGames();
+        // createGames();
+
+        Playlists playlist = new Playlists("");
 
         
     }
@@ -72,6 +74,7 @@ public class App {
             if(club == clubs[i]) continue;
 
             System.out.println(club);
+            System.out.println(clubs[i]);
             i++;
             }
             
@@ -99,7 +102,8 @@ public class App {
             }            
         }
 
-        System.out.println(gameResults);        System.out.printf("Amount of Games in Array %d \n",gameResults.size());
+        System.out.println(gameResults);        
+        System.out.printf("Amount of Games in Array %d \n",gameResults.size());
 
         // return footballGames;        
     }
