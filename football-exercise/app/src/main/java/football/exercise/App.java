@@ -10,8 +10,6 @@ import java.util.Random;
 public class App {
     public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
     public static ArrayList<Games> footballGames = new ArrayList<Games>();
-    public static ArrayList<Teams> footballTeams = new ArrayList<Teams>();
-    public static ArrayList<Stats> footballStats = new ArrayList<Stats>();
     public static String[] clubs = {
         "Bournemouth",
         "Arsenal",
@@ -35,10 +33,7 @@ public class App {
         "Wolves"
     };      
 
-    public static void main(String[] args) {
-        // Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
-        // game.getMatchStatitics();
-
+    public static void main(String[] args) {  
         createGames(clubs);
 
         for (Games game: footballGames){
@@ -46,6 +41,15 @@ public class App {
         }
         
         System.out.println(footballGames.size());
+
+        createSeason();
+
+        String teamToLocate = "Chelsea";
+        for (Games footballGame: footballGames){
+                if(footballGame.homeTeam==teamToLocate||footballGame.awayTeam==teamToLocate){
+                    System.out.println(footballGame.getMatchResults());
+                }            
+            }
         
     }
 
@@ -53,15 +57,6 @@ public class App {
         Random r = new Random();     
         return r.nextInt(5);    
       }
-    
-
-    public static void getTableResultsForLeague(String league){
-        // create Table of Results given the league parameter
-    }
-
-    public static void getMatchStatistics(String homeTeam, String awayTeam){
-        // given 2 parameters, get the statistics for the game
-    }
 
     public static ArrayList<Leagues> createLeagues(){
         // Create a League
@@ -74,41 +69,32 @@ public class App {
         return footballLeagues;
     }
 
-    public static void createGames(String[] clubs){  
-        for (String club: clubs){
-            Integer i = 0;
-            if(club == clubs[i]) continue;
-            footballGames.add(new Games(i, clubs[i], club, randomInt(), randomInt(), randomInt(), randomInt()));
-            footballGames.add(new Games(i, club, clubs[i], randomInt(), randomInt(), randomInt(), randomInt()));
-            i++;
+    public static void createGames(String[] clubs){
+        
+        for (String homeTeam: clubs){
+
+            for (String awayTeam: clubs){
+                Integer i = 0;
+                if(homeTeam == awayTeam) continue;
+                footballGames.add(new Games(i, homeTeam, awayTeam, randomInt(), randomInt(), randomInt(), randomInt()));
+                i++;
+                }
+
             }
     }
 
-    public static ArrayList<Teams> createTeams(){
-        Teams team = new Teams("CHE","Chelsea");
-        Teams teama = new Teams("ARS","Arsenal");
-        Teams teamb = new Teams("LIV","Liverpool");
-        Teams teamc = new Teams("EVE","Everton");
+    // take in footballgames ArrayList and create table
+    public static void createSeason(){
 
-        footballTeams.add(team);
-        footballTeams.add(teama);
-        footballTeams.add(teamb);
-        footballTeams.add(teamc);
-
-        return footballTeams;
-
+        // for (String club: clubs){
+        //     for (String club2:clubs){
+        //         if(club == club2) continue;
+        //         System.out.println(club + club2);
+        //     }            
+        //     }            
     }
 
-    public static ArrayList<Stats> createStats(){
-        Stats stat = new Stats(1, 2, 1, 0, 3);
-        Stats stata = new Stats(2, 2, 1, 0, 3);
 
-        footballStats.add(stat);
-        footballStats.add(stata);
-        
-        return footballStats;
-
-    }
 
   }
 
