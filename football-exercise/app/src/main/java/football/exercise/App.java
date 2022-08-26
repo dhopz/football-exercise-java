@@ -4,7 +4,6 @@
 package football.exercise;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 
@@ -44,7 +43,9 @@ public class App {
 
         for (Games game: footballGames){
             System.out.println(game.getMatchResults());
-        }       
+        }
+        
+        System.out.println(footballGames.size());
         
     }
 
@@ -78,23 +79,9 @@ public class App {
             Integer i = 0;
             if(club == clubs[i]) continue;
             footballGames.add(new Games(i, clubs[i], club, randomInt(), randomInt(), randomInt(), randomInt()));
+            footballGames.add(new Games(i, club, clubs[i], randomInt(), randomInt(), randomInt(), randomInt()));
             i++;
             }
-
-        // ArrayList<HashMap<String, String>> gameResults = new ArrayList<HashMap<String, String>>();
-
-        // String teamToLocate = "Chelsea";
-
-        // for (Games footballGame: footballGames){
-        //     if(footballGame.homeTeam==teamToLocate||footballGame.awayTeam==teamToLocate){
-        //         gameResults.add(footballGame.getMatchResults());
-        //     }            
-        // }
-
-        // System.out.println(gameResults);        
-        // System.out.printf("Amount of Games in Array %d \n",gameResults.size());
-
-        // return footballGames;        
     }
 
     public static ArrayList<Teams> createTeams(){
