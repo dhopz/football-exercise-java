@@ -4,12 +4,14 @@
 package football.exercise;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 
 public class App {
     public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
     public static ArrayList<Games> footballGames = new ArrayList<Games>();
+    public static ArrayList<Results> footballResults = new ArrayList<Results>();
     public static String[] clubs = {
         "Bournemouth",
         "Arsenal",
@@ -34,22 +36,14 @@ public class App {
     };      
 
     public static void main(String[] args) {  
-        createGames(clubs);
+        createGames(clubs); 
+        createResults(footballGames);
 
-        for (Games game: footballGames){
-            System.out.println(game.getMatchResults());
+        for (Results result: footballResults){
+            System.out.println(result.resultEntry());
         }
-        
-        System.out.println(footballGames.size());
+        System.out.println(footballResults.size());
 
-        createSeason();
-
-        String teamToLocate = "Chelsea";
-        for (Games footballGame: footballGames){
-                if(footballGame.homeTeam==teamToLocate||footballGame.awayTeam==teamToLocate){
-                    System.out.println(footballGame.getMatchResults());
-                }            
-            }
         
     }
 
@@ -83,15 +77,42 @@ public class App {
             }
     }
 
-    // take in footballgames ArrayList and create table
-    public static void createSeason(){
+  
+    
+    public static void createResults(ArrayList<Games> footballGames){
+          // take in footballgames ArrayList and create table
+        // {awayTeam=Chelsea, homeTeam=Wolves, homeGoals=4, yellowCards=0, awayGoals=1, redCards=3}
 
-        // for (String club: clubs){
-        //     for (String club2:clubs){
-        //         if(club == club2) continue;
-        //         System.out.println(club + club2);
-        //     }            
-        //     }            
+        Integer won, drawn, points, lost;
+
+        for (Games game:footballGames){
+            // System.out.println(game.getMatchResults());
+            if(game.stats.homeGoals > game.stats.awayGoals){
+                won = 1;
+                drawn = 0;
+                lost = 0;
+                points = 3;
+            } else if(game.stats.homeGoals < game.stats.awayGoals){
+                won = 0;
+                drawn = 0;
+                lost = 1;
+                points = 0;
+            } else {
+                won = 0;
+                drawn = 1;
+                lost = 0;
+                points = 1;
+            }
+
+            footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
+        }
+
+        
+
+        // Results result = new Results(team, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points)
+        System.out.println("Amount of results :"  + footballResults.size());
+        
+
     }
 
 
