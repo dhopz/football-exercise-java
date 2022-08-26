@@ -5,16 +5,20 @@ public class Playlists {
 
 
     public Playlists(String name) {
-        this.name = checkIfNameIsEmpty(name);
+
+      System.out.println("String is null, empty or blank.");
+      this.name = checkIfNameIsEmpty(name);
       }
 
       public String checkIfNameIsEmpty(String name){
-        if (name == null || name.isEmpty() || name.trim().isEmpty()){
-            System.out.println("String is null, empty or blank.");
-            return "New Playlist";} else {
-                System.out.println(name);
+        if (name == null || name.isEmpty() || name.trim().isEmpty()){           
+            return "New Playlist";} else {                
                 return name;
           }
+      }
+
+      public String getName(){
+        return this.name;
       }
     
 }

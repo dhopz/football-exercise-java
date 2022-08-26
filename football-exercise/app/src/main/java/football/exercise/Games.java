@@ -7,7 +7,6 @@ public class Games {
     public Integer id;
     public String homeTeam;
     public String awayTeam;
-    public String location;
     public Date dateOfGame;
     public Date season; // as in 2020/2021
     public Stats stats;
@@ -15,8 +14,7 @@ public class Games {
     public Games(
         Integer id, 
         String homeTeam, 
-        String awayTeam, 
-        String location,
+        String awayTeam,
         Integer homeGoals,
         Integer awayGoals,
         Integer redCards,
@@ -26,7 +24,6 @@ public class Games {
         this.id = id;
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
-        this.location = location;
         this.stats = new Stats(
             id, 
             homeGoals, 
@@ -39,7 +36,6 @@ public class Games {
         //Create a function for each game, get the statistics of the match
         //{location:Stamford Bridge,hometeam:Chelsea,homeGoals:2,awayTeam:Arsenal,awayGoals:1,redCards:0,yellowCards:2}
         HashMap<String, String> stringData = new HashMap<>();
-        stringData.put("location",this.location);
         stringData.put("homeTeam",this.homeTeam);
         stringData.put("awayTeam",this.awayTeam);
         
@@ -49,6 +45,54 @@ public class Games {
         
         return stringData;
         
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setHomeTeam(String homeTeam) {
+        this.homeTeam = homeTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
+    }
+
+    public Date getDateOfGame() {
+        return dateOfGame;
+    }
+
+    public void setDateOfGame(Date dateOfGame) {
+        this.dateOfGame = dateOfGame;
+    }
+
+    public Date getSeason() {
+        return season;
+    }
+
+    public void setSeason(Date season) {
+        this.season = season;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(Stats stats) {
+        this.stats = stats;
     }
 
     

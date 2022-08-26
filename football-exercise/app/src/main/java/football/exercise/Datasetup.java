@@ -20,8 +20,8 @@ public class Datasetup {
     }
 
     public ArrayList<Games> createGames(){
-        Games game = new Games(1, "Chelsea", "Aresnal", "Stamford Bridge", 2, 1, 0, 3);
-        Games game2 = new Games(2, "Liverpool", "Everton", "Anfield", 3, 2, 0, 1);
+        Games game = new Games(1, "Chelsea","Aresnal", 2, 1, 0, 3);
+        Games game2 = new Games(2, "Liverpool", "Everton",  3, 2, 0, 1);
         // Games game3 = new Games()
 
         footballGames.add(game);
