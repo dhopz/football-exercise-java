@@ -5,9 +5,7 @@ package football.exercise;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.Comparator;
 import java.util.Random;
 
 
@@ -44,19 +42,34 @@ public class App {
         createResults(footballGames);
         generateTable();       
 
-        Collections.sort(footballTable, (Table one, Table other) -> {
-            return one.getPoints().compareTo(other.getPoints());
-       });
+        Collections.sort(footballTable,
+                         new FootballTableSortingComparator());
+        
+        Collections.reverse(footballTable);
 
-       Collections.reverse(footballTable);
-
-       for (Table table: footballTable){
+        for (Table table: footballTable){
         table.getPosition();
-        }
-
+        }       
         
     }
     
+    static class FootballTableSortingComparator
+        implements Comparator<Table> {
+ 
+        @Override
+        public int compare(Table table1,Table table2)
+        {
+ 
+            
+            int pointCompare = table1.getPoints().compareTo(
+                table2.getPoints());
+ 
+            int goalDiffCompare = table1.getGoalDifference().compareTo(
+                table2.getGoalDifference()); 
+            
+            return (pointCompare == 0) ? goalDiffCompare : pointCompare;
+        }
+    }
 
     public static Integer randomInt(){
         Random r = new Random();     
@@ -89,8 +102,6 @@ public class App {
     }
     
     public static void createResults(ArrayList<Games> footballGames){
-          // take in footballgames ArrayList and create table
-        // {awayTeam=Chelsea, homeTeam=Wolves, homeGoals=4, yellowCards=0, awayGoals=1, redCards=3}
 
         Integer won, drawn, points, lost;
 
@@ -117,18 +128,12 @@ public class App {
                 drawn = 1;
                 lost = 0;
                 points = 1;
-            }
-             
+            }             
 
             footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
             footballResults.add(new Results(game.awayTeam, 1, won, drawn, lost, game.stats.awayGoals, game.stats.homeGoals, game.stats.awayGoals - game.stats.homeGoals, points));
             
         }
-
-        
-
-        // Results result = new Results(team, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points)
-        System.out.println("Amount of results :"  + footballResults.size());
         
 
     }
