@@ -4,6 +4,8 @@
 package football.exercise;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Optional;
 import java.util.Random;
 
 
@@ -38,12 +40,38 @@ public class App {
         createGames(clubs); 
         createResults(footballGames);
 
-        for (Results result: footballResults){
-            if( result.getTeam()=="Chelsea"){
+        HashMap<String, Object> results = new HashMap<>();
+
+        Integer played = 0;
+        Integer won = 0;
+        Integer drawn= 0;
+        Integer lost= 0;
+        Integer goalsFor= 0;
+        Integer goalsAgainst= 0;
+        Integer goalDifference= 0;
+        Integer points= 0;
+
+        
+        for (Results result: footballResults){            
+
+            if(result.getTeam()=="Chelsea"){
                 System.out.println(result.resultEntry());
+                points = points + result.getPoints();
+                played = played + result.getPlayed();
+                won = won + result.getWon();
+                drawn= drawn + result.getDrawn();
+                lost= lost + result.getLost();
+                goalsFor= goalsFor + result.getGoalsFor();
+                goalsAgainst= goalsAgainst + result.getGoalsAgainst();
+                goalDifference= goalDifference + result.getGoalDifference();               
+
             }
+           
             // System.out.println(result.resultEntry());
         }
+
+        System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d%n","Chelsea",played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference); 
+        
         System.out.println(footballResults.size());
 
         
@@ -109,6 +137,12 @@ public class App {
 
         Integer won, drawn, points, lost;
 
+        for (Results result: footballResults){
+            if (result.getTeam() == "Chelsea"){
+                System.out.println("Hello");
+            }
+        }
+
         for (Games game:footballGames){
             // System.out.println(game.getMatchResults());
             if(game.stats.homeGoals > game.stats.awayGoals){
@@ -127,6 +161,7 @@ public class App {
                 lost = 0;
                 points = 1;
             }
+             
 
             footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
             footballResults.add(new Results(game.awayTeam, 1, won, drawn, lost, game.stats.awayGoals, game.stats.homeGoals, game.stats.awayGoals - game.stats.homeGoals, points));

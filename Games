@@ -1,38 +1,38 @@
-{awayTeam=Chelsea, homeTeam=Bournemouth, homeGoals=0, yellowCards=4, awayGoals=0, redCards=1}
-{awayTeam=Chelsea, homeTeam=Arsenal, homeGoals=4, yellowCards=0, awayGoals=2, redCards=3}
-{awayTeam=Chelsea, homeTeam=Aston Villa, homeGoals=2, yellowCards=1, awayGoals=4, redCards=3}
-{awayTeam=Chelsea, homeTeam=Brentford, homeGoals=4, yellowCards=3, awayGoals=4, redCards=2}
-{awayTeam=Chelsea, homeTeam=Brighton, homeGoals=0, yellowCards=2, awayGoals=0, redCards=1}
-{awayTeam=Bournemouth, homeTeam=Chelsea, homeGoals=1, yellowCards=1, awayGoals=4, redCards=4}
-{awayTeam=Arsenal, homeTeam=Chelsea, homeGoals=2, yellowCards=2, awayGoals=1, redCards=0}
-{awayTeam=Aston Villa, homeTeam=Chelsea, homeGoals=4, yellowCards=2, awayGoals=0, redCards=0}
-{awayTeam=Brentford, homeTeam=Chelsea, homeGoals=2, yellowCards=3, awayGoals=4, redCards=1}
-{awayTeam=Brighton, homeTeam=Chelsea, homeGoals=1, yellowCards=0, awayGoals=3, redCards=0}
-{awayTeam=Crystal Palace, homeTeam=Chelsea, homeGoals=2, yellowCards=3, awayGoals=3, redCards=3}
-{awayTeam=Everton, homeTeam=Chelsea, homeGoals=0, yellowCards=4, awayGoals=0, redCards=1}
-{awayTeam=Fulham, homeTeam=Chelsea, homeGoals=4, yellowCards=4, awayGoals=1, redCards=4}
-{awayTeam=Leeds, homeTeam=Chelsea, homeGoals=3, yellowCards=2, awayGoals=2, redCards=4}
-{awayTeam=Leicester City, homeTeam=Chelsea, homeGoals=0, yellowCards=2, awayGoals=2, redCards=2}
-{awayTeam=Liverpool, homeTeam=Chelsea, homeGoals=0, yellowCards=4, awayGoals=1, redCards=1}
-{awayTeam=Man City, homeTeam=Chelsea, homeGoals=3, yellowCards=0, awayGoals=1, redCards=2}
-{awayTeam=Man United, homeTeam=Chelsea, homeGoals=1, yellowCards=4, awayGoals=0, redCards=1}
-{awayTeam=Newcastle, homeTeam=Chelsea, homeGoals=2, yellowCards=4, awayGoals=0, redCards=2}
-{awayTeam=Nottingham Forest, homeTeam=Chelsea, homeGoals=1, yellowCards=3, awayGoals=2, redCards=2}
-{awayTeam=Southampton, homeTeam=Chelsea, homeGoals=4, yellowCards=1, awayGoals=4, redCards=0}
-{awayTeam=Tottenham, homeTeam=Chelsea, homeGoals=4, yellowCards=0, awayGoals=4, redCards=1}
-{awayTeam=West Ham, homeTeam=Chelsea, homeGoals=2, yellowCards=4, awayGoals=3, redCards=2}
-{awayTeam=Wolves, homeTeam=Chelsea, homeGoals=1, yellowCards=3, awayGoals=0, redCards=3}
-{awayTeam=Chelsea, homeTeam=Crystal Palace, homeGoals=4, yellowCards=4, awayGoals=2, redCards=2}
-{awayTeam=Chelsea, homeTeam=Everton, homeGoals=4, yellowCards=3, awayGoals=0, redCards=3}
-{awayTeam=Chelsea, homeTeam=Fulham, homeGoals=0, yellowCards=0, awayGoals=4, redCards=4}
-{awayTeam=Chelsea, homeTeam=Leeds, homeGoals=2, yellowCards=4, awayGoals=4, redCards=0}
-{awayTeam=Chelsea, homeTeam=Leicester City, homeGoals=4, yellowCards=1, awayGoals=4, redCards=1}
-{awayTeam=Chelsea, homeTeam=Liverpool, homeGoals=3, yellowCards=0, awayGoals=4, redCards=4}
-{awayTeam=Chelsea, homeTeam=Man City, homeGoals=1, yellowCards=3, awayGoals=2, redCards=4}
-{awayTeam=Chelsea, homeTeam=Man United, homeGoals=4, yellowCards=0, awayGoals=1, redCards=1}
-{awayTeam=Chelsea, homeTeam=Newcastle, homeGoals=3, yellowCards=2, awayGoals=1, redCards=1}
-{awayTeam=Chelsea, homeTeam=Nottingham Forest, homeGoals=0, yellowCards=3, awayGoals=0, redCards=4}
-{awayTeam=Chelsea, homeTeam=Southampton, homeGoals=3, yellowCards=4, awayGoals=0, redCards=3}
-{awayTeam=Chelsea, homeTeam=Tottenham, homeGoals=3, yellowCards=0, awayGoals=2, redCards=2}
-{awayTeam=Chelsea, homeTeam=West Ham, homeGoals=1, yellowCards=0, awayGoals=0, redCards=3}
-{awayTeam=Chelsea, homeTeam=Wolves, homeGoals=4, yellowCards=0, awayGoals=1, redCards=3}
+{goalsFor=1, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=-2, points=3}
+{goalsFor=0, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=-3, points=3}
+{goalsFor=2, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-2, points=3}
+{goalsFor=2, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-2, points=3}
+{goalsFor=0, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-2, points=3}
+{goalsFor=0, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-2, points=0}
+{goalsFor=3, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=3, played=1, goalDifference=0, points=1}
+{goalsFor=0, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=0, played=1, goalDifference=0, points=1}
+{goalsFor=0, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=0, played=1, goalDifference=0, points=1}
+{goalsFor=3, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-1, points=0}
+{goalsFor=0, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=-3, points=0}
+{goalsFor=0, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-2, points=0}
+{goalsFor=4, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=2, points=3}
+{goalsFor=1, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=-2, points=0}
+{goalsFor=3, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=0, played=1, goalDifference=3, points=3}
+{goalsFor=3, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=1, played=1, goalDifference=2, points=3}
+{goalsFor=4, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=2, points=3}
+{goalsFor=1, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-1, points=0}
+{goalsFor=1, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-1, points=0}
+{goalsFor=4, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=2, points=3}
+{goalsFor=4, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=4, played=1, goalDifference=0, points=1}
+{goalsFor=0, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=-3, points=0}
+{goalsFor=3, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-1, points=0}
+{goalsFor=3, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=3, played=1, goalDifference=0, points=1}
+{goalsFor=3, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=1, points=0}
+{goalsFor=3, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=3, played=1, goalDifference=0, points=1}
+{goalsFor=4, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=1, points=0}
+{goalsFor=4, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=2, points=0}
+{goalsFor=4, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=3, played=1, goalDifference=1, points=0}
+{goalsFor=2, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=0, played=1, goalDifference=2, points=0}
+{goalsFor=2, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-2, points=3}
+{goalsFor=2, lost=0, won=0, team=Chelsea, drawn=1, goalsAgainst=2, played=1, goalDifference=0, points=1}
+{goalsFor=4, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=0, played=1, goalDifference=4, points=0}
+{goalsFor=0, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-2, points=3}
+{goalsFor=2, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-2, points=3}
+{goalsFor=4, lost=1, won=0, team=Chelsea, drawn=0, goalsAgainst=0, played=1, goalDifference=4, points=0}
+{goalsFor=1, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=2, played=1, goalDifference=-1, points=3}
+{goalsFor=2, lost=0, won=1, team=Chelsea, drawn=0, goalsAgainst=4, played=1, goalDifference=-2, points=3}
