@@ -13,6 +13,7 @@ public class App {
     public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
     public static ArrayList<Games> footballGames = new ArrayList<Games>();
     public static ArrayList<Results> footballResults = new ArrayList<Results>();
+    public static ArrayList<Table> footballTable = new ArrayList<Table>();
     public static String[] clubs = {
         "Bournemouth",
         "Arsenal",
@@ -39,40 +40,12 @@ public class App {
     public static void main(String[] args) {  
         createGames(clubs); 
         createResults(footballGames);
+        generateTable();
 
-        HashMap<String, Object> results = new HashMap<>();
-
-        Integer played = 0;
-        Integer won = 0;
-        Integer drawn= 0;
-        Integer lost= 0;
-        Integer goalsFor= 0;
-        Integer goalsAgainst= 0;
-        Integer goalDifference= 0;
-        Integer points= 0;
-
-        
-        for (Results result: footballResults){            
-
-            if(result.getTeam()=="Chelsea"){
-                System.out.println(result.resultEntry());
-                points = points + result.getPoints();
-                played = played + result.getPlayed();
-                won = won + result.getWon();
-                drawn= drawn + result.getDrawn();
-                lost= lost + result.getLost();
-                goalsFor= goalsFor + result.getGoalsFor();
-                goalsAgainst= goalsAgainst + result.getGoalsAgainst();
-                goalDifference= goalDifference + result.getGoalDifference();               
-
-            }
-           
-            // System.out.println(result.resultEntry());
-        }
-
-        System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d%n","Chelsea",played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference); 
-        
-        System.out.println(footballResults.size());
+        for (Table table: footballTable){
+            table.getPosition();
+        }      
+       
 
         
     }
@@ -107,29 +80,6 @@ public class App {
             }
     }
 
-    public static void resultCalc(Games game){
-        Integer won, drawn, points, lost;
-        
-        if(game.stats.homeGoals > game.stats.awayGoals){
-            won = 1;
-            drawn = 0;
-            lost = 0;
-            points = 3;
-        } else if(game.stats.homeGoals < game.stats.awayGoals){
-            won = 0;
-            drawn = 0;
-            lost = 1;
-            points = 0;
-        } else {
-            won = 0;
-            drawn = 1;
-            lost = 0;
-            points = 1;
-        }
-
-    }
-
-  
     
     public static void createResults(ArrayList<Games> footballGames){
           // take in footballgames ArrayList and create table
@@ -174,6 +124,40 @@ public class App {
         System.out.println("Amount of results :"  + footballResults.size());
         
 
+    }
+
+    public static void generateTable(){
+        
+
+        for (String club:clubs){
+
+            Integer played = 0;
+            Integer won = 0;
+            Integer drawn= 0;
+            Integer lost= 0;
+            Integer goalsFor= 0;
+            Integer goalsAgainst= 0;
+            Integer goalDifference= 0;
+            Integer points= 0;
+
+            for (Results result: footballResults){            
+
+                if(result.getTeam()==club){
+                    // System.out.println(result.resultEntry());
+                    points = points + result.getPoints();
+                    played = played + result.getPlayed();
+                    won = won + result.getWon();
+                    drawn= drawn + result.getDrawn();
+                    lost= lost + result.getLost();
+                    goalsFor= goalsFor + result.getGoalsFor();
+                    goalsAgainst= goalsAgainst + result.getGoalsAgainst();
+                    goalDifference= goalDifference + result.getGoalDifference();          
+                }                              
+            }
+
+            // System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d, points=%d %n",club,played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference,points); 
+            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points));
+        }
     }
 
 
