@@ -101,6 +101,11 @@ public class Table extends Results{
 
     public void getPosition(){
         System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d, points=%d %n",team,played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference,points); 
+    }
+    
+    @Override
+    public String toString(){               
+        return " Team="+team + " Played=" + played + " won=" + won + " drawn=" + drawn + " lost=" + lost + " goalsFor=" + goalsFor + " goalsAgainst=" + goalsAgainst + " goalDifference=" + goalDifference + " points=" + points;
 
     }
     

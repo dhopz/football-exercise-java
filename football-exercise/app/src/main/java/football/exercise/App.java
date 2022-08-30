@@ -5,7 +5,6 @@ package football.exercise;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Random;
 
 
@@ -42,35 +41,18 @@ public class App {
         createResults(footballGames);
         generateTable();       
 
-        Collections.sort(footballTable,
-                         new FootballTableSortingComparator());
+        Collections.sort(footballTable,new FootballTableSortingComparator());
         
         Collections.reverse(footballTable);
 
+        Integer i = 1;
         for (Table table: footballTable){
-        table.getPosition();
-        }       
+            System.out.println(i + table.toString());
+            i++;
+        }  
         
     }
     
-    static class FootballTableSortingComparator
-        implements Comparator<Table> {
- 
-        @Override
-        public int compare(Table table1,Table table2)
-        {
- 
-            
-            int pointCompare = table1.getPoints().compareTo(
-                table2.getPoints());
- 
-            int goalDiffCompare = table1.getGoalDifference().compareTo(
-                table2.getGoalDifference()); 
-            
-            return (pointCompare == 0) ? goalDiffCompare : pointCompare;
-        }
-    }
-
     public static Integer randomInt(){
         Random r = new Random();     
         return r.nextInt(5);    
@@ -105,14 +87,7 @@ public class App {
 
         Integer won, drawn, points, lost;
 
-        for (Results result: footballResults){
-            if (result.getTeam() == "Chelsea"){
-                System.out.println("Hello");
-            }
-        }
-
         for (Games game:footballGames){
-            // System.out.println(game.getMatchResults());
             if(game.stats.homeGoals > game.stats.awayGoals){
                 won = 1;
                 drawn = 0;
@@ -133,8 +108,7 @@ public class App {
             footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
             footballResults.add(new Results(game.awayTeam, 1, won, drawn, lost, game.stats.awayGoals, game.stats.homeGoals, game.stats.awayGoals - game.stats.homeGoals, points));
             
-        }
-        
+        }        
 
     }
 
