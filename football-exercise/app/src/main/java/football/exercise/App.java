@@ -4,7 +4,6 @@
 package football.exercise;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 
@@ -40,7 +39,10 @@ public class App {
         createResults(footballGames);
 
         for (Results result: footballResults){
-            System.out.println(result.resultEntry());
+            if( result.getTeam()=="Chelsea"){
+                System.out.println(result.resultEntry());
+            }
+            // System.out.println(result.resultEntry());
         }
         System.out.println(footballResults.size());
 
@@ -77,6 +79,28 @@ public class App {
             }
     }
 
+    public static void resultCalc(Games game){
+        Integer won, drawn, points, lost;
+        
+        if(game.stats.homeGoals > game.stats.awayGoals){
+            won = 1;
+            drawn = 0;
+            lost = 0;
+            points = 3;
+        } else if(game.stats.homeGoals < game.stats.awayGoals){
+            won = 0;
+            drawn = 0;
+            lost = 1;
+            points = 0;
+        } else {
+            won = 0;
+            drawn = 1;
+            lost = 0;
+            points = 1;
+        }
+
+    }
+
   
     
     public static void createResults(ArrayList<Games> footballGames){
@@ -105,6 +129,8 @@ public class App {
             }
 
             footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
+            footballResults.add(new Results(game.awayTeam, 1, won, drawn, lost, game.stats.awayGoals, game.stats.homeGoals, game.stats.awayGoals - game.stats.homeGoals, points));
+            
         }
 
         
