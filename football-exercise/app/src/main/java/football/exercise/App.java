@@ -4,7 +4,9 @@
 package football.exercise;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -40,15 +42,21 @@ public class App {
     public static void main(String[] args) {  
         createGames(clubs); 
         createResults(footballGames);
-        generateTable();
+        generateTable();       
 
-        for (Table table: footballTable){
-            table.getPosition();
-        }      
-       
+        Collections.sort(footballTable, (Table one, Table other) -> {
+            return one.getPoints().compareTo(other.getPoints());
+       });
+
+       Collections.reverse(footballTable);
+
+       for (Table table: footballTable){
+        table.getPosition();
+        }
 
         
     }
+    
 
     public static Integer randomInt(){
         Random r = new Random();     
@@ -79,7 +87,6 @@ public class App {
 
             }
     }
-
     
     public static void createResults(ArrayList<Games> footballGames){
           // take in footballgames ArrayList and create table
@@ -127,7 +134,6 @@ public class App {
     }
 
     public static void generateTable(){
-        
 
         for (String club:clubs){
 
@@ -143,7 +149,6 @@ public class App {
             for (Results result: footballResults){            
 
                 if(result.getTeam()==club){
-                    // System.out.println(result.resultEntry());
                     points = points + result.getPoints();
                     played = played + result.getPlayed();
                     won = won + result.getWon();
@@ -154,13 +159,9 @@ public class App {
                     goalDifference= goalDifference + result.getGoalDifference();          
                 }                              
             }
-
-            // System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d, points=%d %n",club,played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference,points); 
             footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points));
         }
     }
-
-
 
   }
 
