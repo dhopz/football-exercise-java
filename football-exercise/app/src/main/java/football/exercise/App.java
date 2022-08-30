@@ -49,8 +49,15 @@ public class App {
         for (Table table: footballTable){
             System.out.println(i + table.toString());
             i++;
-        }  
+        }
         
+        // System.out.println(footballTable.get(0));
+
+        // for (Games games: footballGames){
+        //     if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
+        //         System.out.println(games.getMatchResults());
+        //     }
+        // }
     }
     
     public static Integer randomInt(){
