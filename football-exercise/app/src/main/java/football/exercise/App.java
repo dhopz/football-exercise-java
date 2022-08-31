@@ -82,9 +82,9 @@ public class App {
             }
     }
 
-    // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}  
-    public static void createResults(List<Games> footballGames){
 
+    public static void createResults(List<Games> footballGames){
+        // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}
         int won;
         int drawn;
         int points;
