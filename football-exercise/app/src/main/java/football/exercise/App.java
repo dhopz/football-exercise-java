@@ -66,8 +66,9 @@ public class App {
         return footballLeagues;
     }
 
-    // Create {awayTeam=Arsenal, homeTeam=Bournemouth, homeGoals=1, yellowCards=0, awayGoals=2, redCards=1}
+
     public static void createGames(String[] clubs){
+        // Create {awayTeam=Arsenal, homeTeam=Bournemouth, homeGoals=1, yellowCards=0, awayGoals=2, redCards=1}
         
         for (String homeTeam: clubs){
 
