@@ -53,11 +53,11 @@ public class App {
         
         
 
-        for (Games games: footballGames){
-            if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
-                System.out.println(games.getMatchResults());
-            }
-        }
+//        for (Games games: footballGames){
+//            if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
+//                System.out.println(games.getMatchResults());
+//            }
+//        }
     }
     
     public static Integer randomInt(){
