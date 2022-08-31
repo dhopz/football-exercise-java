@@ -27,7 +27,7 @@ public class App {
         "Man City", 
         "Man United",
         "Newcastle",
-        "Nottingham Forest", 
+        "Nottingham",
         "Southampton",
         "Tottenham",
         "West Ham", 
