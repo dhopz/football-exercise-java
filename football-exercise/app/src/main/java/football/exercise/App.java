@@ -3,16 +3,14 @@
  */
 package football.exercise;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 
 public class App {
-    public static ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
-    public static ArrayList<Games> footballGames = new ArrayList<Games>();
-    public static ArrayList<Results> footballResults = new ArrayList<Results>();
-    public static ArrayList<Table> footballTable = new ArrayList<Table>();
+    public static List<Leagues> footballLeagues = new ArrayList<>();
+    public static List<Games> footballGames = new ArrayList<>();
+    public static List<Results> footballResults = new ArrayList<>();
+    public static List<Table> footballTable = new ArrayList<>();
     public static String[] clubs = {
         "Bournemouth",
         "Arsenal",
@@ -41,7 +39,7 @@ public class App {
         createResults(footballGames);
         generateTable();       
 
-        Collections.sort(footballTable,new FootballTableSortingComparator());
+        footballTable.sort(new FootballTableSortingComparator());
         
         Collections.reverse(footballTable);
 
@@ -50,14 +48,6 @@ public class App {
             System.out.println(i + table.toString());
             i++;
         }
-        
-        
-
-//        for (Games games: footballGames){
-//            if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
-//                System.out.println(games.getMatchResults());
-//            }
-//        }
     }
     
     public static Integer randomInt(){
@@ -65,7 +55,7 @@ public class App {
         return r.nextInt(5);    
       }
 
-    public static ArrayList<Leagues> createLeagues(){
+    public static List<Leagues> createLeagues(){
         // Create a League
         Leagues league = new Leagues("English Premiership", "England");
         Leagues league2 = new Leagues("SkyBet Championship", "England");
@@ -83,7 +73,7 @@ public class App {
 
             for (String awayTeam: clubs){
                 Integer i = 0;
-                if(homeTeam == awayTeam) continue;
+                if(Objects.equals(homeTeam, awayTeam)) continue;
                 footballGames.add(new Games(i, homeTeam, awayTeam, randomInt(), randomInt(), randomInt(), randomInt()));
                 i++;
                 }
@@ -92,9 +82,12 @@ public class App {
     }
 
     // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}  
-    public static void createResults(ArrayList<Games> footballGames){
+    public static void createResults(List<Games> footballGames){
 
-        Integer won, drawn, points, lost;
+        int won;
+        int drawn;
+        int points;
+        int lost;
 
         for (Games game:footballGames){
             if(game.stats.homeGoals > game.stats.awayGoals){
@@ -125,19 +118,19 @@ public class App {
 
         for (String club:clubs){
 
-            Integer played = 0;
-            Integer won = 0;
-            Integer drawn= 0;
-            Integer lost= 0;
-            Integer goalsFor= 0;
-            Integer goalsAgainst= 0;
-            Integer goalDifference= 0;
-            Integer points= 0;
+            int played = 0;
+            int won = 0;
+            int drawn= 0;
+            int lost= 0;
+            int goalsFor= 0;
+            int goalsAgainst= 0;
+            int goalDifference= 0;
+            int points= 0;
             ArrayList<String> lastFive = new ArrayList<>();
 
             for (Results result: footballResults){            
 
-                if(result.getTeam()==club){
+                if(Objects.equals(result.getTeam(), club)){
                     points = points + result.getPoints();
                     played = played + result.getPlayed();
                     won = won + result.getWon();
