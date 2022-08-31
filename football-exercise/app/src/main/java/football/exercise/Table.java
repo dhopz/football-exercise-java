@@ -1,5 +1,7 @@
 package football.exercise;
 
+import java.util.ArrayList;
+
 public class Table extends Results{
 
     private String team;
@@ -11,9 +13,10 @@ public class Table extends Results{
     private Integer goalsAgainst;
     private Integer goalDifference;
     private Integer points;
+    private ArrayList<String> lastFive;
 
     public Table(String team, Integer played, Integer won, Integer drawn, Integer lost, Integer goalsFor,
-            Integer goalsAgainst, Integer goalDifference, Integer points) {
+            Integer goalsAgainst, Integer goalDifference, Integer points, ArrayList<String> lastFive) {
         super(team, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points);
         //TODO Auto-generated constructor stub
         this.team = team;
@@ -25,6 +28,7 @@ public class Table extends Results{
         this.goalsAgainst = goalsAgainst;
         this.goalDifference = goalDifference;
         this.points = points;
+        this.lastFive = lastFive;
     }
 
     public String getTeam() {
@@ -99,13 +103,22 @@ public class Table extends Results{
         this.points = points;
     }
 
+    public ArrayList<String> getLastFive() {
+        return lastFive;
+    }
+
+    public void setLastFive(ArrayList<String> lastFive) {
+        this.lastFive = lastFive;
+    }
+
+
     public void getPosition(){
         System.out.printf("Team=%s, played=%d, won=%d, drawn=%d, lost=%d, goalsFor=%d, goalsAgainst=%d, goalDifference=%d, points=%d %n",team,played,won,drawn,lost,goalsFor,goalsAgainst,goalDifference,points); 
     }
     
     @Override
     public String toString(){               
-        return " Team="+team + " Played=" + played + " won=" + won + " drawn=" + drawn + " lost=" + lost + " goalsFor=" + goalsFor + " goalsAgainst=" + goalsAgainst + " goalDifference=" + goalDifference + " points=" + points;
+        return " Team=" + team + " Played=" + played + " won=" + won + " drawn=" + drawn + " lost=" + lost + " goalsFor=" + goalsFor + " goalsAgainst=" + goalsAgainst + " goalDifference=" + goalDifference + " points=" + points + " lastFive=" + lastFive.subList(lastFive.size() - 5,lastFive.size());
 
     }
     

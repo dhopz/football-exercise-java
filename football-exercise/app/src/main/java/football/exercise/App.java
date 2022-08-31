@@ -51,13 +51,13 @@ public class App {
             i++;
         }
         
-        // System.out.println(footballTable.get(0));
+        
 
-        // for (Games games: footballGames){
-        //     if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
-        //         System.out.println(games.getMatchResults());
-        //     }
-        // }
+        for (Games games: footballGames){
+            if(games.getHomeTeam()==footballTable.get(0).getTeam() || games.getAwayTeam()==footballTable.get(0).getTeam()){
+                System.out.println(games.getMatchResults());
+            }
+        }
     }
     
     public static Integer randomInt(){
@@ -76,6 +76,7 @@ public class App {
         return footballLeagues;
     }
 
+    // Create {awayTeam=Arsenal, homeTeam=Bournemouth, homeGoals=1, yellowCards=0, awayGoals=2, redCards=1}
     public static void createGames(String[] clubs){
         
         for (String homeTeam: clubs){
@@ -89,7 +90,8 @@ public class App {
 
             }
     }
-    
+
+    // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}  
     public static void createResults(ArrayList<Games> footballGames){
 
         Integer won, drawn, points, lost;
@@ -131,6 +133,7 @@ public class App {
             Integer goalsAgainst= 0;
             Integer goalDifference= 0;
             Integer points= 0;
+            ArrayList<String> lastFive = new ArrayList<>();
 
             for (Results result: footballResults){            
 
@@ -142,10 +145,21 @@ public class App {
                     lost= lost + result.getLost();
                     goalsFor= goalsFor + result.getGoalsFor();
                     goalsAgainst= goalsAgainst + result.getGoalsAgainst();
-                    goalDifference= goalDifference + result.getGoalDifference();          
+                    goalDifference= goalDifference + result.getGoalDifference();
+                    
+                    if (result.getWon() == 1){
+                        lastFive.add("W");
+                    }
+                    else if (result.getLost()== 1){
+                        lastFive.add("L");
+                    }
+                    else {
+                        lastFive.add("D");
+                    }
+                
                 }                              
             }
-            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points));
+            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points, lastFive));
         }
     }
 
