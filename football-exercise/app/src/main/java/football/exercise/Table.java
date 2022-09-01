@@ -118,7 +118,17 @@ public class Table extends Results{
     
     @Override
     public String toString(){               
-        return " Team=" + team + " Played=" + played + " won=" + won + " drawn=" + drawn + " lost=" + lost + " goalsFor=" + goalsFor + " goalsAgainst=" + goalsAgainst + " goalDifference=" + goalDifference + " points=" + points + " lastFive=" + lastFive.subList(lastFive.size() - 5,lastFive.size());
+        return String.format(" Team=%s Played=%d won=%d drawn=%d lost=%d goalsFor=%d goalsAgainst=%d goalDifference=%d points=%d lastFive=%s",
+                team,
+                played,
+                won,
+                drawn,
+                lost,
+                goalsFor,
+                goalsAgainst,
+                goalDifference,
+                points,
+                lastFive.subList(lastFive.size() - 5, lastFive.size()));
 
     }
     
