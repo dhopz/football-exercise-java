@@ -4,12 +4,12 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class Games {
-    public Integer id;
-    public String homeTeam;
-    public String awayTeam;
-    public Date dateOfGame;
-    public Date season; // as in 2020/2021
-    public Stats stats;
+    private Integer id;
+    private String homeTeam;
+    private String awayTeam;
+    private Date dateOfGame;
+    private Date season; // as in 2020/2021
+    private Stats stats;
 
     public Games(
         Integer id, 
@@ -39,9 +39,9 @@ public class Games {
         stringData.put("homeTeam",this.homeTeam);
         stringData.put("awayTeam",this.awayTeam);
         
-        HashMap<String,String> intergerData = stats.gameResults();
+        HashMap<String,String> resultData = stats.gameResults();
 
-        stringData.putAll(intergerData);
+        stringData.putAll(resultData);
         
         return stringData;
         

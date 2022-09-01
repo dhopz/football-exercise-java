@@ -7,11 +7,11 @@ import java.util.*;
 
 
 public class App {
-    public static List<Leagues> footballLeagues = new ArrayList<>();
-    public static List<Games> footballGames = new ArrayList<>();
-    public static List<Results> footballResults = new ArrayList<>();
-    public static List<Table> footballTable = new ArrayList<>();
-    public static String[] clubs = {
+    private static final List<Leagues> footballLeagues = new ArrayList<>();
+    private static final List<Games> footballGames = new ArrayList<>();
+    private static final List<Results> footballResults = new ArrayList<>();
+    private static final List<Table> footballTable = new ArrayList<>();
+    private static final String[] clubs = {
         "Bournemouth",
         "Arsenal",
         "Aston Villa",
@@ -48,6 +48,12 @@ public class App {
             System.out.println(i + table.toString());
             i++;
         }
+
+        for (Games games: footballGames){
+                 if(Objects.equals(games.getHomeTeam(), footballTable.get(0).getTeam()) || Objects.equals(games.getAwayTeam(), footballTable.get(0).getTeam())){
+                     System.out.println(games.getMatchResults());
+                 }
+             }
     }
     
     public static Integer randomInt(){
@@ -69,15 +75,13 @@ public class App {
 
     public static void createGames(String[] clubs){
         // Create {awayTeam=Arsenal, homeTeam=Bournemouth, homeGoals=1, yellowCards=0, awayGoals=2, redCards=1}
-        
+        int i = 0;
         for (String homeTeam: clubs){
-
             for (String awayTeam: clubs){
-                Integer i = 0;
                 if(Objects.equals(homeTeam, awayTeam)) continue;
                 footballGames.add(new Games(i, homeTeam, awayTeam, randomInt(), randomInt(), randomInt(), randomInt()));
                 i++;
-                }
+            }
 
             }
     }
@@ -91,12 +95,12 @@ public class App {
         int lost;
 
         for (Games game:footballGames){
-            if(game.stats.homeGoals > game.stats.awayGoals){
+            if(game.getStats().homeGoals > game.getStats().awayGoals){
                 won = 1;
                 drawn = 0;
                 lost = 0;
                 points = 3;
-            } else if(game.stats.homeGoals < game.stats.awayGoals){
+            } else if(game.getStats().homeGoals < game.getStats().awayGoals){
                 won = 0;
                 drawn = 0;
                 lost = 1;
@@ -108,8 +112,8 @@ public class App {
                 points = 1;
             }             
 
-            footballResults.add(new Results(game.homeTeam, 1, won, drawn, lost, game.stats.homeGoals, game.stats.awayGoals, game.stats.homeGoals - game.stats.awayGoals, points));
-            footballResults.add(new Results(game.awayTeam, 1, won, drawn, lost, game.stats.awayGoals, game.stats.homeGoals, game.stats.awayGoals - game.stats.homeGoals, points));
+            footballResults.add(new Results(game.getHomeTeam(), 1, won, drawn, lost, game.getStats().homeGoals, game.getStats().awayGoals, game.getStats().homeGoals - game.getStats().awayGoals, points));
+            footballResults.add(new Results(game.getAwayTeam(), 1, won, drawn, lost, game.getStats().awayGoals, game.getStats().homeGoals, game.getStats().awayGoals - game.getStats().homeGoals, points));
             
         }        
 

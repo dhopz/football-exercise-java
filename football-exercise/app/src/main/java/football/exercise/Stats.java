@@ -1,6 +1,7 @@
 package football.exercise;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Stats {
     public Integer id;
@@ -17,6 +18,7 @@ public class Stats {
         Integer redCards,
         Integer yellowCards
         ){
+        this.id = id;
         this.homeGoals = homeGoals;
         this.awayGoals = awayGoals;
         this.redCards = redCards;
@@ -31,6 +33,7 @@ public class Stats {
         //Function to create the results based on the statistics provided
         //return an ArrayList
         HashMap<String, String> integerData = new HashMap<>();
+        integerData.put("gameId",this.id.toString());
         integerData.put("homeGoals",this.homeGoals.toString());
         integerData.put("awayGoals",this.awayGoals.toString());
         integerData.put("redCards",this.redCards.toString());
