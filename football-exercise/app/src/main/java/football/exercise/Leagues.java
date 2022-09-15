@@ -9,25 +9,16 @@ public class Leagues {
         this.league = league;
         this.country = country;
     }
-    public String getLeague() {
-        return league;
-    }
-
-    public void setLeague(String league) {
-        this.league = league;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public void createTable(){
+   public void createTable(){
         //Function to create Table as in 38 games, GF,GA, points etc
         //HashMap<String, Integer[0..8]> capitalCities = new HashMap<String, String>();
     }
-    
+
+    @Override
+    public String toString() {
+        return "Leagues{" +
+                "league='" + league + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }

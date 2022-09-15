@@ -94,6 +94,14 @@ public class Games {
         this.stats = stats;
     }
 
-    
+
+    @Override
+    public String toString() {
+        return "Games{" +
+                "id=" + id +
+                ", homeTeam='" + homeTeam + '\'' +
+                ", awayTeam='" + awayTeam + '\'' +
+                '}';
+    }
 }
   
