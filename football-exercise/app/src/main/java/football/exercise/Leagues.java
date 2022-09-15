@@ -11,6 +11,7 @@ public class Leagues {
     private final String country;
     private final List<Games> footballGames = new ArrayList<>();
     private final List<Results> footballResults = new ArrayList<>();
+    private final List<Table> footballTable = new ArrayList<>();
 
     public Leagues(String league, String country){
         this.league = league;
@@ -29,7 +30,7 @@ public class Leagues {
         return r.nextInt(5);
     }
 
-    public void createGames(String[] clubs){
+    public List<Games> createGames(String[] clubs){
         int i = 0;
         for (String homeTeam: clubs){
             for (String awayTeam: clubs){
@@ -38,17 +39,17 @@ public class Leagues {
                 i++;
             }
         }
-
+        return this.footballGames;
     }
 
-   public void createResults(){
+   public void createResults(String[] clubs){
        // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}
        int won;
        int drawn;
        int points;
        int lost;
 
-       for (Games game: footballGames){
+       for (Games game: createGames(clubs)){
            if(game.getStats().getHomeGoals() > game.getStats().getAwayGoals()){
                won = 1;
                drawn = 0;
@@ -71,6 +72,47 @@ public class Leagues {
 
        }
 
+   }
+
+   public void generateTable(String[] clubs){
+       for (String club:clubs){
+
+           int played = 0;
+           int won = 0;
+           int drawn= 0;
+           int lost= 0;
+           int goalsFor= 0;
+           int goalsAgainst= 0;
+           int goalDifference= 0;
+           int points= 0;
+           ArrayList<String> lastFive = new ArrayList<>();
+
+           for (Results result: footballResults){
+
+               if(Objects.equals(result.getTeam(), club)){
+                   points = points + result.getPoints();
+                   played = played + result.getPlayed();
+                   won = won + result.getWon();
+                   drawn= drawn + result.getDrawn();
+                   lost= lost + result.getLost();
+                   goalsFor= goalsFor + result.getGoalsFor();
+                   goalsAgainst= goalsAgainst + result.getGoalsAgainst();
+                   goalDifference= goalDifference + result.getGoalDifference();
+
+                   if (result.getWon() == 1){
+                       lastFive.add("W");
+                   }
+                   else if (result.getLost()== 1){
+                       lastFive.add("L");
+                   }
+                   else {
+                       lastFive.add("D");
+                   }
+
+               }
+           }
+           footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points, lastFive));
+       }
    }
 
     @Override
