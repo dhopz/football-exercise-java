@@ -2,6 +2,8 @@ package football.exercise;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.assertEquals;
 
 public class GamesTest {
@@ -10,4 +12,20 @@ public class GamesTest {
         Games game = new Games(1,"Home Team","Away Team",1,2,1,1);
         assertEquals("Games{id=1, homeTeam='Home Team', awayTeam='Away Team'}",game.toString());
     }
+
+    @Test
+    public void getMatchDataNoInputReturnsMapOfGameData(){
+        Games game = new Games(1,"HomeTeam","AwayTeam",1,2,1,1);
+        HashMap<String,String> gameData = new HashMap<>();
+        gameData.put("gameId", game.getId().toString());
+        gameData.put("awayTeam","AwayTeam");
+        gameData.put("homeTeam","HomeTeam");
+        gameData.put("homeGoals","1");
+        gameData.put("awayGoals","2");
+        gameData.put("redCards","1");
+        gameData.put("yellowCards","1");
+//        {gameId=14, awayTeam=AwayTeam, homeTeam=HomeTeam, homeGoals=3, yellowCards=1, awayGoals=2, redCards=2}
+        assertEquals(gameData,game.getMatchData());
+    }
+
 }

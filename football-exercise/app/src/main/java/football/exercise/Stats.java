@@ -32,14 +32,14 @@ public class Stats {
     public Map<String, String> gameResults(){
         //Function to create the results based on the statistics provided
         //return an ArrayList
-        HashMap<String, String> integerData = new HashMap<>();
-        integerData.put("gameId",this.id.toString());
-        integerData.put("homeGoals",this.homeGoals.toString());
-        integerData.put("awayGoals",this.awayGoals.toString());
-        integerData.put("redCards",this.redCards.toString());
-        integerData.put("yellowCards",this.yellowCards.toString());
+        HashMap<String, String> gameData = new HashMap<>();
+        gameData.put("gameId",this.id.toString());
+        gameData.put("homeGoals",this.homeGoals.toString());
+        gameData.put("awayGoals",this.awayGoals.toString());
+        gameData.put("redCards",this.redCards.toString());
+        gameData.put("yellowCards",this.yellowCards.toString());
 
-        return integerData;
+        return gameData;
     }
 
     public Integer getId() {

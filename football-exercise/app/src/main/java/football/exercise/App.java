@@ -51,7 +51,7 @@ public class App {
 
         for (Games games: footballGames){
                  if(Objects.equals(games.getHomeTeam(), footballTable.get(0).getTeam()) || Objects.equals(games.getAwayTeam(), footballTable.get(0).getTeam())){
-                     System.out.println(games.getMatchResults());
+                     System.out.println(games.getMatchData());
                  }
              }
     }
