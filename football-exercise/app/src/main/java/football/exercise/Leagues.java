@@ -1,19 +1,27 @@
 package football.exercise;
 
-// import java.util.HashMap;
-
-// import java.io.FileReader;
-// import java.io.IOException;
-// import java.io.Reader;
-
-// import com.google.gson.Gson;
-
 public class Leagues {
-    public String league;
-    public String country;
+
+    private String league;
+    private String country;
 
     public Leagues(String league, String country){
         this.league = league;
+        this.country = country;
+    }
+    public String getLeague() {
+        return league;
+    }
+
+    public void setLeague(String league) {
+        this.league = league;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
         this.country = country;
     }
 

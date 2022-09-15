@@ -1,6 +1,7 @@
 package football.exercise;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Results {
     private String team;
@@ -129,7 +130,7 @@ public class Results {
         this.points = points;
     }
 
-    public HashMap<String,Object> resultEntry(){
+    public Map<String,Object> resultEntry(){
         HashMap<String, Object> results = new HashMap<>();
         results.put("team",this.team);
         results.put("played",this.played);

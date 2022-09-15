@@ -3,10 +3,10 @@ package football.exercise;
 import java.util.ArrayList;
 
 public class Datasetup {
-    public ArrayList<Leagues> footballLeagues = new ArrayList<Leagues>();
-    public ArrayList<Games> footballGames = new ArrayList<Games>();
-    public ArrayList<Teams> footballTeams = new ArrayList<Teams>();
-    public ArrayList<Stats> footballStats = new ArrayList<Stats>();
+    public ArrayList<Leagues> footballLeagues = new ArrayList<>();
+    public ArrayList<Games> footballGames = new ArrayList<>();
+    public ArrayList<Teams> footballTeams = new ArrayList<>();
+    public ArrayList<Stats> footballStats = new ArrayList<>();
 
     public ArrayList<Leagues> createLeagues(){
         // Create a League

@@ -2,6 +2,7 @@ package football.exercise;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Games {
     private Integer id;
@@ -32,14 +33,12 @@ public class Games {
             yellowCards);
     }
 
-    public HashMap<String, String> getMatchResults() {
-        //Create a function for each game, get the statistics of the match
-        //{location:Stamford Bridge,hometeam:Chelsea,homeGoals:2,awayTeam:Arsenal,awayGoals:1,redCards:0,yellowCards:2}
+    public Map<String, String> getMatchResults() {
         HashMap<String, String> stringData = new HashMap<>();
         stringData.put("homeTeam",this.homeTeam);
         stringData.put("awayTeam",this.awayTeam);
         
-        HashMap<String,String> resultData = stats.gameResults();
+        Map<String,String> resultData = stats.gameResults();
 
         stringData.putAll(resultData);
         

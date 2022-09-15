@@ -95,12 +95,12 @@ public class App {
         int lost;
 
         for (Games game:footballGames){
-            if(game.getStats().homeGoals > game.getStats().awayGoals){
+            if(game.getStats().getHomeGoals() > game.getStats().getAwayGoals()){
                 won = 1;
                 drawn = 0;
                 lost = 0;
                 points = 3;
-            } else if(game.getStats().homeGoals < game.getStats().awayGoals){
+            } else if(game.getStats().getHomeGoals() < game.getStats().getAwayGoals()){
                 won = 0;
                 drawn = 0;
                 lost = 1;
@@ -112,8 +112,8 @@ public class App {
                 points = 1;
             }             
 
-            footballResults.add(new Results(game.getHomeTeam(), 1, won, drawn, lost, game.getStats().homeGoals, game.getStats().awayGoals, game.getStats().homeGoals - game.getStats().awayGoals, points));
-            footballResults.add(new Results(game.getAwayTeam(), 1, won, drawn, lost, game.getStats().awayGoals, game.getStats().homeGoals, game.getStats().awayGoals - game.getStats().homeGoals, points));
+            footballResults.add(new Results(game.getHomeTeam(), 1, won, drawn, lost, game.getStats().getHomeGoals(), game.getStats().getAwayGoals(), game.getStats().getHomeGoals() - game.getStats().getAwayGoals(), points));
+            footballResults.add(new Results(game.getAwayTeam(), 1, won, drawn, lost, game.getStats().getAwayGoals(), game.getStats().getHomeGoals(), game.getStats().getAwayGoals() - game.getStats().getHomeGoals(), points));
             
         }        
 

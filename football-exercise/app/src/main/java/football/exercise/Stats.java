@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Stats {
-    public Integer id;
-    public Integer homeGoals= 0;
-    public Integer awayGoals= 0;
-    public Integer redCards = 0;
-    public Integer yellowCards = 0;
+    private final Integer id;
+    private Integer homeGoals= 0;
+    private Integer awayGoals= 0;
+    private Integer redCards = 0;
+    private Integer yellowCards = 0;
     
 
     public Stats(
@@ -29,7 +29,7 @@ public class Stats {
         return this.homeGoals;
     }
 
-    public HashMap<String, String> gameResults(){
+    public Map<String, String> gameResults(){
         //Function to create the results based on the statistics provided
         //return an ArrayList
         HashMap<String, String> integerData = new HashMap<>();
@@ -41,5 +41,36 @@ public class Stats {
 
         return integerData;
     }
-    
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setHomeGoals(Integer homeGoals) {
+        this.homeGoals = homeGoals;
+    }
+
+    public Integer getAwayGoals() {
+        return awayGoals;
+    }
+
+    public void setAwayGoals(Integer awayGoals) {
+        this.awayGoals = awayGoals;
+    }
+
+    public Integer getRedCards() {
+        return redCards;
+    }
+
+    public void setRedCards(Integer redCards) {
+        this.redCards = redCards;
+    }
+
+    public Integer getYellowCards() {
+        return yellowCards;
+    }
+
+    public void setYellowCards(Integer yellowCards) {
+        this.yellowCards = yellowCards;
+    }
 }
