@@ -140,9 +140,7 @@ public class Results {
         results.put("goalsFor",this.goalsFor);
         results.put("goalsAgainst",this.goalsAgainst);
         results.put("goalDifference",this.goalDifference);
-        results.put("points",this.points);        
-
-        // results.put("points",Integer.parseInt(results.get("points").toString())+10);
+        results.put("points",this.points);
 
         return results;
     }

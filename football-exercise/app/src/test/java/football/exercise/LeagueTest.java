@@ -5,39 +5,87 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.Assert.*;
 
 public class LeagueTest {
-    private boolean areEqual(Map<String, String> first, Map<String, String> second) {
-        if (first.size() != second.size()) {
-            return false;
-        }
-
-        return first.entrySet().stream()
-                .allMatch(e -> e.getValue().equals(second.get(e.getKey())));
-    }
     @Test
     public void toStringLeagueNameStringCountryStringNewLeagueCreatedReturnString(){
-        Leagues league = new Leagues("New League","New Country");
+        String[] clubs = new String[]{"Bournemouth","Arsenal"};
+        Leagues league = new Leagues("New League","New Country",clubs);
         assertEquals("Leagues{league='New League', country='New Country'}", league.toString());
     }
     @Test
-    public void createGamesInputClubsArrayReturnListOfGames(){
-        Leagues league = new Leagues("New League","New Country");
+    public void createGamesInputClubsArrayReturn2Teams2Matches(){
         String[] clubs = new String[]{"Bournemouth","Arsenal"};
-        league.createGames(clubs);
+        Leagues league = new Leagues("New League","New Country",clubs);
+        List<Games> newGames = league.createGames();
 
-        List<Games> footballGames = new ArrayList<>();
-        Games game = new Games(0,"Bournemouth","Arsenal",1,1,1,1);
-        Games game1 = new Games(1,"Arsenal","Bournemouth",1,2,1,1);
-        footballGames.add(game);
-        footballGames.add(game1);
-
-
-        assertArrayEquals(league.getFootballGames().toArray(),footballGames.toArray());
-
-//        assertNotEquals(footballGames, league.getFootballGames());
+        assertEquals(2,newGames.size());
+        assertEquals("Bournemouth",newGames.get(0).getHomeTeam());
+        assertEquals("Arsenal",newGames.get(0).getAwayTeam());
+        assertEquals("Arsenal",newGames.get(1).getHomeTeam());
+        assertEquals("Bournemouth",newGames.get(1).getAwayTeam());
+        assertNotNull(newGames.get(0).getStats().getHomeGoals());
     }
+
+    @Test
+    public void createGamesInput3ClubsArrayReturn3Teams6Matches(){
+        String[] clubs = new String[]{"Bournemouth","Arsenal","Chelsea"};
+        Leagues league = new Leagues("New League", "New Country",clubs);
+        List<Games> newGames = league.createGames();
+        assertEquals(6,newGames.size());
+        assertEquals("Bournemouth",newGames.get(0).getHomeTeam());
+        assertEquals("Arsenal",newGames.get(0).getAwayTeam());
+        assertEquals("Bournemouth",newGames.get(1).getHomeTeam());
+        assertEquals("Chelsea",newGames.get(1).getAwayTeam());
+        assertEquals("Arsenal",newGames.get(2).getHomeTeam());
+        assertEquals("Bournemouth",newGames.get(2).getAwayTeam());
+        assertEquals("Arsenal",newGames.get(3).getHomeTeam());
+        assertEquals("Chelsea",newGames.get(3).getAwayTeam());
+        assertNotNull(newGames.get(0).getStats().getHomeGoals());
+    }
+
+    @Test
+    public void createGamesInput20ClubsReturn380Matches(){
+        String[] clubs = new String[]{
+                "Bournemouth",
+                "Arsenal",
+                "Aston Villa",
+                "Brentford",
+                "Brighton",
+                "Chelsea",
+                "Crystal Palace",
+                "Everton",
+                "Fulham",
+                "Leeds",
+                "Leicester City",
+                "Liverpool",
+                "Man City",
+                "Man United",
+                "Newcastle",
+                "Nottingham",
+                "Southampton",
+                "Tottenham",
+                "West Ham",
+                "Wolves"};
+        Leagues league = new Leagues("New League","New Country",clubs);
+        List<Games> newGames = league.createGames();
+        assertEquals(380,newGames.size());
+    }
+
+    @Test
+    public void createResults2ClubsReturnPointsFromGame(){
+        String[] clubs = new String[]{"Bournemouth","Arsenal"};
+        Leagues league = new Leagues("New League","New Country",clubs);
+        List<Results> results = league.createResults();
+        assertEquals("Bournemouth",results.get(0).getTeam());
+        assertEquals(Integer.valueOf(1),results.get(0).getPlayed());
+        assertEquals("Arsenal",results.get(1).getTeam());
+        assertEquals(Integer.valueOf(1),results.get(1).getPlayed());
+        assertEquals(4,results.size());
+    }
+
 
 }

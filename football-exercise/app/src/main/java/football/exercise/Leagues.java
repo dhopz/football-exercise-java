@@ -9,28 +9,32 @@ public class Leagues {
 
     private final String league;
     private final String country;
+    private final String[] clubs;
     private final List<Games> footballGames = new ArrayList<>();
     private final List<Results> footballResults = new ArrayList<>();
     private final List<Table> footballTable = new ArrayList<>();
 
-    public Leagues(String league, String country){
+    public Leagues(String league, String country, String[] clubs){
         this.league = league;
         this.country = country;
+        this.clubs = clubs;
     }
 
     public List<Games> getFootballGames() {
         return footballGames;
     }
-
     public List<Results> getFootballResults() {
         return footballResults;
+    }
+    public List<Table> getFootballTable() {
+        return footballTable;
     }
     public static Integer randomInt(){
         Random r = new Random();
         return r.nextInt(5);
     }
 
-    public List<Games> createGames(String[] clubs){
+    public List<Games> createGames(){
         int i = 0;
         for (String homeTeam: clubs){
             for (String awayTeam: clubs){
@@ -42,14 +46,14 @@ public class Leagues {
         return this.footballGames;
     }
 
-   public void createResults(String[] clubs){
+   public List<Results> createResults(){
        // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}
        int won;
        int drawn;
        int points;
        int lost;
 
-       for (Games game: createGames(clubs)){
+       for (Games game: createGames()){
            if(game.getStats().getHomeGoals() > game.getStats().getAwayGoals()){
                won = 1;
                drawn = 0;
@@ -69,11 +73,9 @@ public class Leagues {
 
            footballResults.add(new Results(game.getHomeTeam(), 1, won, drawn, lost, game.getStats().getHomeGoals(), game.getStats().getAwayGoals(), game.getStats().getHomeGoals() - game.getStats().getAwayGoals(), points));
            footballResults.add(new Results(game.getAwayTeam(), 1, won, drawn, lost, game.getStats().getAwayGoals(), game.getStats().getHomeGoals(), game.getStats().getAwayGoals() - game.getStats().getHomeGoals(), points));
-
        }
-
+       return this.footballResults;
    }
-
    public void generateTable(String[] clubs){
        for (String club:clubs){
 

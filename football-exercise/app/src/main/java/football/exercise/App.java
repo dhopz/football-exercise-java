@@ -35,12 +35,12 @@ public class App {
     };      
 
     public static void main(String[] args) {  
-        createGames(clubs); 
+        createGames(clubs);
         createResults(footballGames);
-        generateTable();       
+        generateTable();
 
         footballTable.sort(new FootballTableSortingComparator());
-        
+
         Collections.reverse(footballTable);
 
         Integer i = 1;
@@ -61,16 +61,16 @@ public class App {
         return r.nextInt(5);    
       }
 
-    public static List<Leagues> createLeagues(){
-        // Create a League
-        Leagues league = new Leagues("English Premiership", "England");
-        Leagues league2 = new Leagues("SkyBet Championship", "England");
-
-        footballLeagues.add(league);
-        footballLeagues.add(league2);
-
-        return footballLeagues;
-    }
+//    public static List<Leagues> createLeagues(){
+//        // Create a League
+//        Leagues league = new Leagues("English Premiership", "England");
+//        Leagues league2 = new Leagues("SkyBet Championship", "England");
+//
+//        footballLeagues.add(league);
+//        footballLeagues.add(league2);
+//
+//        return footballLeagues;
+//    }
 
 
     public static void createGames(String[] clubs){
