@@ -3,8 +3,6 @@ p
 @football-exercise/app/src/main/java/football/exercise/Teams.java,c\7\c79e59d5488de4bc10c05ff428bbbb9fad22c487
 r
 Bfootball-exercise/app/src/main/java/football/exercise/Players.java,b\b\bb5584758f192029b21338bfdc7765f5fd7a6315
-p
-@football-exercise/app/src/main/java/football/exercise/Table.java,d\e\de4c261862aaedfc76a1502a8787f4205f8ba26f
 5
 Games,3\9\398ed329814977519b9f899253338884a2ba941f
 9

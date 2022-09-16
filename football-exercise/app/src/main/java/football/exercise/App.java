@@ -35,6 +35,15 @@ public class App {
     };      
 
     public static void main(String[] args) {  
+//        fullAppRun();
+        Leagues league = new Leagues("New League","New Country",clubs);
+        for(Table table:league.generateTable()){
+            System.out.println(table);
+        }
+
+    }
+
+    public static void fullAppRun(){
         createGames(clubs);
         createResults(footballGames);
         generateTable();
@@ -50,10 +59,10 @@ public class App {
         }
 
         for (Games games: footballGames){
-                 if(Objects.equals(games.getHomeTeam(), footballTable.get(0).getTeam()) || Objects.equals(games.getAwayTeam(), footballTable.get(0).getTeam())){
-                     System.out.println(games.getMatchData());
-                 }
-             }
+            if(Objects.equals(games.getHomeTeam(), footballTable.get(0).getTeam()) || Objects.equals(games.getAwayTeam(), footballTable.get(0).getTeam())){
+                System.out.println(games.getMatchData());
+            }
+        }
     }
     
     public static Integer randomInt(){

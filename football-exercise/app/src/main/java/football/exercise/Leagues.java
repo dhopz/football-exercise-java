@@ -76,8 +76,8 @@ public class Leagues {
        }
        return this.footballResults;
    }
-   public void generateTable(String[] clubs){
-       for (String club:clubs){
+   public List<Table> generateTable(){
+       for (String club:this.clubs){
 
            int played = 0;
            int won = 0;
@@ -89,7 +89,7 @@ public class Leagues {
            int points= 0;
            ArrayList<String> lastFive = new ArrayList<>();
 
-           for (Results result: footballResults){
+           for (Results result: createResults()){
 
                if(Objects.equals(result.getTeam(), club)){
                    points = points + result.getPoints();
@@ -115,6 +115,7 @@ public class Leagues {
            }
            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points, lastFive));
        }
+       return this.footballTable;
    }
 
     @Override
