@@ -37,12 +37,21 @@ public class App {
     public static void main(String[] args) {  
 //        fullAppRun();
         Leagues league = new Leagues("New League","New Country",clubs);
-//        for(Games game: league.createGames()){
-//            System.out.println(game.getStats().gameResults());
-//        }
-        for(Table table:league.generateTable()){
-            System.out.println(table);
+        league.generateTable();
+
+        System.out.println(league.getFootballTable().get(0).getTeam() + " League Champion \n");
+
+        String winner = league.getFootballTable().get(0).getTeam();
+
+        for (Games games: league.getFootballGames()){
+            if (Objects.equals(games.getHomeTeam(),winner) || Objects.equals(games.getAwayTeam(),winner)){
+                System.out.println(games.getMatchData());
+            }
         }
+
+        System.out.println(league.getFootballTable().get(0).getLastFive());
+
+        System.out.println(league.getFootballResults().get(0).resultEntry());
 
     }
 

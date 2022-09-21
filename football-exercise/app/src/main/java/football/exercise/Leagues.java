@@ -1,9 +1,6 @@
 package football.exercise;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 public class Leagues {
 
@@ -117,6 +114,16 @@ public class Leagues {
            }
            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points, lastFive));
        }
+       footballTable.sort(new FootballTableSortingComparator());
+
+       Collections.reverse(footballTable);
+
+       Integer i = 1;
+       for (Table table: this.footballTable){
+           System.out.println(i + table.toString());
+           i++;
+       }
+
        return this.footballTable;
    }
 
