@@ -51,7 +51,16 @@ public class App {
 
         System.out.println(league.getFootballTable().get(0).getLastFive());
 
-        System.out.println(league.getFootballResults().get(0).resultEntry());
+        for(Results result: league.getFootballResults()){
+            if(Objects.equals(result.getTeam(), winner)){
+                System.out.println(result.resultEntry());
+            }
+        }
+
+        System.out.println(league.getFootballTable().get(0).getLastFive());
+
+
+//        System.out.println(league.getFootballResults().get(0).resultEntry());
 
     }
 
