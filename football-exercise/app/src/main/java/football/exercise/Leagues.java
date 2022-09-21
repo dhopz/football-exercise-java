@@ -77,6 +77,8 @@ public class Leagues {
        return this.footballResults;
    }
    public List<Table> generateTable(){
+        //Have to create the results
+        createResults();
        for (String club:this.clubs){
 
            int played = 0;
@@ -89,7 +91,7 @@ public class Leagues {
            int points= 0;
            ArrayList<String> lastFive = new ArrayList<>();
 
-           for (Results result: createResults()){
+           for (Results result: this.footballResults){
 
                if(Objects.equals(result.getTeam(), club)){
                    points = points + result.getPoints();

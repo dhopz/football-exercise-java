@@ -37,6 +37,9 @@ public class App {
     public static void main(String[] args) {  
 //        fullAppRun();
         Leagues league = new Leagues("New League","New Country",clubs);
+//        for(Games game: league.createGames()){
+//            System.out.println(game.getStats().gameResults());
+//        }
         for(Table table:league.generateTable()){
             System.out.println(table);
         }
