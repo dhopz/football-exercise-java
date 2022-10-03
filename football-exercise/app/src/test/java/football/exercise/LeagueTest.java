@@ -87,13 +87,13 @@ public class LeagueTest {
         assertEquals(4,results.size());
     }
 
-    @Test
-    public void createTable2ClubsReturnPositionOfClub(){
-        String[] clubs = new String[]{"Bournemouth","Arsenal"};
-        Leagues league = new Leagues("New League","New Country",clubs);
-        List<Table> table = league.generateTable();
-        assertEquals(Integer.valueOf(2),table.get(1).getPlayed());
-    }
+//    @Test
+//    public void createTable2ClubsReturnPositionOfClub(){
+//        String[] clubs = new String[]{"Bournemouth","Arsenal"};
+//        Leagues league = new Leagues("New League","New Country",clubs);
+//        List<Table> table = league.generateTable();
+//        assertEquals(Integer.valueOf(1),table.get(0).getPosition());
+//    }
 
 
 }

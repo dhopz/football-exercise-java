@@ -40,95 +40,41 @@ public class Results {
         // {team=Chelsea, played=38,won=x,drawn=x,lost=x,GF=x,GA=x,GD=x,points=x}
     }
 
-
     public String getTeam() {
         return team;
     }
-
-
-    public void setTeam(String team) {
-        this.team = team;
-    }
-
 
     public Integer getPlayed() {
         return played;
     }
 
-
-    public void setPlayed(Integer played) {
-        this.played = played;
-    }
-
-
     public Integer getWon() {
         return won;
     }
-
-
-    public void setWon(Integer won) {
-        this.won = won;
-    }
-
 
     public Integer getDrawn() {
         return drawn;
     }
 
-
-    public void setDrawn(Integer drawn) {
-        this.drawn = drawn;
-    }
-
-
     public Integer getLost() {
         return lost;
     }
-
-
-    public void setLost(Integer lost) {
-        this.lost = lost;
-    }
-
 
     public Integer getGoalsFor() {
         return goalsFor;
     }
 
-
-    public void setGoalsFor(Integer goalsFor) {
-        this.goalsFor = goalsFor;
-    }
-
-
     public Integer getGoalsAgainst() {
         return goalsAgainst;
     }
-
-
-    public void setGoalsAgainst(Integer goalsAgainst) {
-        this.goalsAgainst = goalsAgainst;
-    }
-
-
     public Integer getGoalDifference() {
         return goalDifference;
     }
-
-
-    public void setGoalDifference(Integer goalDifference) {
-        this.goalDifference = goalDifference;
-    }
-
 
     public Integer getPoints() {
         return points;
     }
 
-
-    public void setPoints(Integer points) {
-        this.points = points;
-    }
 
     public Map<String,Object> resultEntry(){
         HashMap<String, Object> results = new HashMap<>();

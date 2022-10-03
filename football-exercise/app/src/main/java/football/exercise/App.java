@@ -11,31 +11,30 @@ public class App {
     private static final List<Games> footballGames = new ArrayList<>();
     private static final List<Results> footballResults = new ArrayList<>();
     private static final List<Table> footballTable = new ArrayList<>();
-    private static final String[] clubs = {
-        "Bournemouth",
-        "Arsenal",
-        "Aston Villa",
-        "Brentford",
-        "Brighton",
-        "Chelsea",
-        "Crystal Palace", 
-        "Everton",
-        "Fulham",
-        "Leeds", 
-        "Leicester City", 
-        "Liverpool", 
-        "Man City", 
-        "Man United",
-        "Newcastle",
-        "Nottingham",
-        "Southampton",
-        "Tottenham",
-        "West Ham", 
-        "Wolves"
-    };      
-
     public static void main(String[] args) {  
 //        fullAppRun();
+        String[] clubs = {
+                "Bournemouth",
+                "Arsenal",
+                "Aston Villa",
+                "Brentford",
+                "Brighton",
+                "Chelsea",
+                "Crystal Palace",
+                "Everton",
+                "Fulham",
+                "Leeds",
+                "Leicester City",
+                "Liverpool",
+                "Man City",
+                "Man United",
+                "Newcastle",
+                "Nottingham",
+                "Southampton",
+                "Tottenham",
+                "West Ham",
+                "Wolves"
+        };
         Leagues league = new Leagues("New League","New Country",clubs);
         league.generateTable();
 
@@ -64,10 +63,10 @@ public class App {
 
     }
 
-    public static void fullAppRun(){
+    public static void fullAppRun(String[] clubs){
         createGames(clubs);
         createResults(footballGames);
-        generateTable();
+        generateTable(clubs);
 
         footballTable.sort(new FootballTableSortingComparator());
 
@@ -149,7 +148,7 @@ public class App {
 
     }
 
-    public static void generateTable(){
+    public static void generateTable(String[] clubs){
 
         for (String club:clubs){
 
