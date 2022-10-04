@@ -73,7 +73,7 @@ public class Leagues {
        }
        return this.footballResults;
    }
-   public List<Table> generateTable(){
+   public void generateTable(){
         //Have to create the results
         createResults();
        for (String club:this.clubs){
@@ -118,13 +118,32 @@ public class Leagues {
 
        Collections.reverse(footballTable);
 
+//       Integer i = 1;
+//       for (Table table: this.footballTable){
+//           System.out.println(i + table.toString());
+//           i++;
+//       }
+
+   }
+
+   public void generateRank(){
        Integer i = 1;
-       for (Table table: this.footballTable){
-           System.out.println(i + table.toString());
+       for (Table clubResults: this.footballTable){
+           clubResults.setRank(i);
            i++;
        }
+   }
 
-       return this.footballTable;
+   public void printResults(){
+       for (Table clubResults: this.footballTable){
+           System.out.println(clubResults);
+       }
+   }
+
+   public void viewSeason(){
+        generateTable();
+        generateRank();
+        printResults();
    }
 
     @Override

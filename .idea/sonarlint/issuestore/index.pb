@@ -13,3 +13,5 @@ v
 Ffootball-exercise/app/src/test/java/football/exercise/PlayersTest.java,2\3\23daa8add77e259803d5625bc5bef853d7bd69f0
 t
 Dfootball-exercise/app/src/test/java/football/exercise/StatsTest.java,5\9\59020cdd50555c54b6d6faec6fe839d3c29fc49f
+p
+@football-exercise/app/src/main/java/football/exercise/Stats.java,7\d\7dcff3f57abdb47e55069b6a909bb29528a96253

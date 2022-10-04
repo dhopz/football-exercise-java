@@ -15,6 +15,9 @@ public class Table extends Results{
     private Integer points;
     private ArrayList<String> lastFive;
 
+
+    private Integer rank;
+
     public Table(String team, Integer played, Integer won, Integer drawn, Integer lost, Integer goalsFor,
             Integer goalsAgainst, Integer goalDifference, Integer points, ArrayList<String> lastFive) {
         super(team, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points);
@@ -29,6 +32,14 @@ public class Table extends Results{
         this.goalDifference = goalDifference;
         this.points = points;
         this.lastFive = lastFive;
+    }
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
     }
 
     public String getTeam() {
@@ -118,7 +129,8 @@ public class Table extends Results{
     
     @Override
     public String toString(){               
-        return String.format(" Team=%s Played=%d won=%d drawn=%d lost=%d goalsFor=%d goalsAgainst=%d goalDifference=%d points=%d lastFive=%s",
+        return String.format(" Rank=%s Team=%s Played=%d won=%d drawn=%d lost=%d goalsFor=%d goalsAgainst=%d goalDifference=%d points=%d lastFive=%s",
+                rank,
                 team,
                 played,
                 won,

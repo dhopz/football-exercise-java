@@ -36,7 +36,8 @@ public class App {
                 "Wolves"
         };
         Leagues league = new Leagues("New League","New Country",clubs);
-        league.generateTable();
+        league.viewSeason();
+//        league.generateTable();
 
         System.out.println(league.getFootballTable().get(0).getTeam() + " League Champion \n");
 
