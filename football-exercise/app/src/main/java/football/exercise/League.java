@@ -2,17 +2,17 @@ package football.exercise;
 
 import java.util.*;
 
-public class Leagues {
+public class League {
 
-    private final String league;
+    private final String name;
     private final String country;
     private final String[] clubs;
     private final List<Games> footballGames = new ArrayList<>();
     private final List<Results> footballResults = new ArrayList<>();
     private final List<Table> footballTable = new ArrayList<>();
 
-    public Leagues(String league, String country, String[] clubs){
-        this.league = league;
+    public League(String league, String country, String[] clubs){
+        this.name = league;
         this.country = country;
         this.clubs = clubs;
     }
@@ -44,7 +44,6 @@ public class Leagues {
     }
 
    public List<Results> createResults(){
-       // Create {goalsFor=0, lost=1, won=0, team=Bournemouth, drawn=0, goalsAgainst=1, played=1, goalDifference=-1, points=0}
        int won;
        int drawn;
        int points;
@@ -86,7 +85,7 @@ public class Leagues {
            int goalsAgainst= 0;
            int goalDifference= 0;
            int points= 0;
-           ArrayList<String> lastFive = new ArrayList<>();
+           ArrayList<Character> lastFive = new ArrayList<>();
 
            for (Results result: this.footballResults){
 
@@ -99,32 +98,26 @@ public class Leagues {
                    goalsFor= goalsFor + result.getGoalsFor();
                    goalsAgainst= goalsAgainst + result.getGoalsAgainst();
                    goalDifference= goalDifference + result.getGoalDifference();
-
-                   if (result.getWon() == 1){
-                       lastFive.add("W");
-                   }
-                   else if (result.getLost()== 1){
-                       lastFive.add("L");
-                   }
-                   else {
-                       lastFive.add("D");
-                   }
-
+                   lastFive.add(addResult(result));
                }
            }
            footballTable.add(new Table(club, played, won, drawn, lost, goalsFor, goalsAgainst, goalDifference, points, lastFive));
        }
-       footballTable.sort(new FootballTableSortingComparator());
-
-       Collections.reverse(footballTable);
-
-//       Integer i = 1;
-//       for (Table table: this.footballTable){
-//           System.out.println(i + table.toString());
-//           i++;
-//       }
-
    }
+
+   public char addResult(Results result){
+       if (result.getWon() == 1){
+           return 'W';
+       }
+       else if (result.getLost()== 1){
+           return 'L';
+       }
+       else {
+           return 'D';
+       }
+   }
+
+
 
    public void generateRank(){
        Integer i = 1;
@@ -142,14 +135,20 @@ public class Leagues {
 
    public void viewSeason(){
         generateTable();
+        footballTable.sort(new FootballTableSortingComparator());
+        Collections.reverse(footballTable);
         generateRank();
         printResults();
+   }
+
+   public String getChampion(){
+       return footballTable.get(0).getTeam();
    }
 
     @Override
     public String toString() {
         return "Leagues{" +
-                "league='" + league + '\'' +
+                "league='" + name + '\'' +
                 ", country='" + country + '\'' +
                 '}';
     }

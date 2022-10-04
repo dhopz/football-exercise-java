@@ -2,10 +2,7 @@ package football.exercise;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 import static org.junit.Assert.*;
 
@@ -13,13 +10,13 @@ public class LeagueTest {
     @Test
     public void toStringLeagueNameStringCountryStringNewLeagueCreatedReturnString(){
         String[] clubs = new String[]{"Bournemouth","Arsenal"};
-        Leagues league = new Leagues("New League","New Country",clubs);
+        League league = new League("New League","New Country",clubs);
         assertEquals("Leagues{league='New League', country='New Country'}", league.toString());
     }
     @Test
     public void createGamesInputClubsArrayReturn2Teams2Matches(){
         String[] clubs = new String[]{"Bournemouth","Arsenal"};
-        Leagues league = new Leagues("New League","New Country",clubs);
+        League league = new League("New League","New Country",clubs);
         List<Games> newGames = league.createGames();
 
         assertEquals(2,newGames.size());
@@ -33,7 +30,7 @@ public class LeagueTest {
     @Test
     public void createGamesInput3ClubsArrayReturn3Teams6Matches(){
         String[] clubs = new String[]{"Bournemouth","Arsenal","Chelsea"};
-        Leagues league = new Leagues("New League", "New Country",clubs);
+        League league = new League("New League", "New Country",clubs);
         List<Games> newGames = league.createGames();
         assertEquals(6,newGames.size());
         assertEquals("Bournemouth",newGames.get(0).getHomeTeam());
@@ -70,7 +67,7 @@ public class LeagueTest {
                 "Tottenham",
                 "West Ham",
                 "Wolves"};
-        Leagues league = new Leagues("New League","New Country",clubs);
+        League league = new League("New League","New Country",clubs);
         List<Games> newGames = league.createGames();
         assertEquals(380,newGames.size());
     }
@@ -78,7 +75,7 @@ public class LeagueTest {
     @Test
     public void createResults2ClubsReturnPointsFromGame(){
         String[] clubs = new String[]{"Bournemouth","Arsenal"};
-        Leagues league = new Leagues("New League","New Country",clubs);
+        League league = new League("New League","New Country",clubs);
         List<Results> results = league.createResults();
         assertEquals("Bournemouth",results.get(0).getTeam());
         assertEquals(Integer.valueOf(1),results.get(0).getPlayed());
