@@ -3,9 +3,6 @@
  */
 package football.exercise;
 
-import java.util.*;
-
-
 public class App {
     public static void main(String[] args) {
         String[] clubs = {
@@ -31,26 +28,10 @@ public class App {
                 "Wolves"
         };
         League league = new League("New League","New Country",clubs);
-        league.viewSeason();
-        System.out.println(league.getChampion() + " League Champion \n");
+        league.generateSeason();
 
-        String winner = league.getFootballTable().get(0).getTeam();
+        System.out.println("\n " + league.getChampion() + " League Champion \n");
 
-        for (Games games: league.getFootballGames()){
-            if (Objects.equals(games.getHomeTeam(),winner) || Objects.equals(games.getAwayTeam(),winner)){
-                System.out.println(games.getMatchData());
-            }
-        }
-
-        System.out.println(league.getFootballTable().get(0).getLastFive());
-
-        for(Results result: league.getFootballResults()){
-            if(Objects.equals(result.getTeam(), winner)){
-                System.out.println(result.resultEntry());
-            }
-        }
-
-        System.out.println(league.getFootballTable().get(0).getLastFive());
     }
   }
 

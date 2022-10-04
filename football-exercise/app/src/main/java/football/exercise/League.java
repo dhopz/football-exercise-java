@@ -117,8 +117,6 @@ public class League {
        }
    }
 
-
-
    public void generateRank(){
        Integer i = 1;
        for (Table clubResults: this.footballTable){
@@ -133,7 +131,7 @@ public class League {
        }
    }
 
-   public void viewSeason(){
+   public void generateSeason(){
         generateTable();
         footballTable.sort(new FootballTableSortingComparator());
         Collections.reverse(footballTable);
@@ -143,6 +141,22 @@ public class League {
 
    public String getChampion(){
        return footballTable.get(0).getTeam();
+   }
+
+   public void getGameResults(String team){
+       for (Games games: footballGames){
+           if (Objects.equals(games.getHomeTeam(),team) || Objects.equals(games.getAwayTeam(),team)){
+               System.out.println(games.getMatchData());
+           }
+       }
+   }
+
+   public void getTeamResults(String team){
+       for(Results result: footballResults){
+           if(Objects.equals(result.getTeam(), team)){
+               System.out.println(result.resultEntry());
+           }
+       }
    }
 
     @Override

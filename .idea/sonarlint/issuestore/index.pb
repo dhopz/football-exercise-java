@@ -7,8 +7,6 @@ Bfootball-exercise/app/src/main/java/football/exercise/Players.java,b\b\bb55847
 Games,3\9\398ed329814977519b9f899253338884a2ba941f
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-‰
-Yfootball-exercise/app/src/main/java/football/exercise/FootballTableSortingComparator.java,7\a\7a98cff16318600e97a4c32d7d8d201ce19873e5
 v
 Ffootball-exercise/app/src/test/java/football/exercise/PlayersTest.java,2\3\23daa8add77e259803d5625bc5bef853d7bd69f0
 t

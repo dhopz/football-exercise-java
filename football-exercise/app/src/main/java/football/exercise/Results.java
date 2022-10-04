@@ -4,15 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Results {
-    private String team;
-    private Integer played;
-    private Integer won;
-    private Integer drawn;
-    private Integer lost;
-    private Integer goalsFor;
-    private Integer goalsAgainst;
-    private Integer goalDifference;
-    private Integer points;
+    private final String team;
+    private final Integer played;
+    private final Integer won;
+    private final Integer drawn;
+    private final Integer lost;
+    private final Integer goalsFor;
+    private final Integer goalsAgainst;
+    private final Integer goalDifference;
+    private final Integer points;
     
 
     public Results(
