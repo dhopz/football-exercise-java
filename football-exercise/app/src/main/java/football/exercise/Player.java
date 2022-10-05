@@ -1,0 +1,37 @@
+package football.exercise;
+
+import java.util.Date;
+
+public class Player {
+    private String firstName;
+    private String lastName;
+    private String position;
+    private String club;
+
+    public Player(String firstName, String lastName, String position,String club){
+        this.firstName = firstName;
+        this.lastName =lastName;
+        this.position = position;
+        this.club = club;
+    }
+
+    public String playerDetails(){
+        return this.firstName + " " + this.lastName;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getClub() {
+        return club;
+    }
+
+    public void setClub(String club) {
+        this.club = club;
+    }
+}

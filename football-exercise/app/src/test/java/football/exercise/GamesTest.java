@@ -28,4 +28,12 @@ public class GamesTest {
         assertEquals(gameData,game.getMatchData());
     }
 
+    @Test
+    public void createAGame_GivenTwoTeams(){
+        Team team = new Team("ARS","Arsenal");
+        Player player = new Player("Thiago","Silva","Defender","Chelsea");
+        team.addPlayer(player);
+        assertEquals(11,team.getPlayers());
+    }
+
 }
