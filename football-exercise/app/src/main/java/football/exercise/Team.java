@@ -4,19 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    private String shortName;
-    private String longName;
+    private final String shortName;
+    private final String longName;
     private List<Player> players = new ArrayList<>();
 
     public Team(String shortName, String longName) {
         this.shortName = shortName;
         this.longName = longName;
-    }
-
-    public void getMatchResults(){
-        //return a HashMap
-        //Function to get all the results for a season, pass in a team to call data
-        //from Games
     }
 
     public List<Player> getPlayers(){

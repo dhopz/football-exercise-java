@@ -1,5 +1,6 @@
 package football.exercise;
 
+//import org.junit.jupiter.api.Test;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -28,12 +29,13 @@ public class GamesTest {
         assertEquals(gameData,game.getMatchData());
     }
 
-    @Test
-    public void createAGame_GivenTwoTeams(){
-        Team team = new Team("ARS","Arsenal");
-        Player player = new Player("Thiago","Silva","Defender","Chelsea");
-        team.addPlayer(player);
-        assertEquals(11,team.getPlayers());
-    }
+//    @Test
+//    public void createAGame_GivenTwoTeams(){
+//        Team team = new Team("ARS","Arsenal");
+//        Team team1 = new Team("CHE","Chelsea");
+//        Player player = new Player("Thiago","Silva","Defender","Chelsea");
+//        team.addPlayer(player);
+//        assertEquals(11,team.getPlayers());
+//    }
 
 }

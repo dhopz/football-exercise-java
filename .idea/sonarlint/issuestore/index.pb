@@ -7,3 +7,17 @@ p
 @football-exercise/app/src/main/java/football/exercise/Stats.java,7\d\7dcff3f57abdb47e55069b6a909bb29528a96253
 ‰
 Yfootball-exercise/app/src/main/java/football/exercise/FootballTableSortingComparator.java,7\a\7a98cff16318600e97a4c32d7d8d201ce19873e5
+p
+@football-exercise/app/src/main/java/football/exercise/Games.java,f\1\f12d13c7febcb965bd3624b83d33315c71577c57
+r
+Bfootball-exercise/app/src/main/java/football/exercise/Results.java,d\a\daf56c95082696fa504fbec671ed49a91ad2be97
+q
+Afootball-exercise/app/src/main/java/football/exercise/League.java,0\7\0743211bde6d5284c64d0ea0638435b703afb93f
+p
+@football-exercise/app/src/main/java/football/exercise/Table.java,d\e\de4c261862aaedfc76a1502a8787f4205f8ba26f
+v
+Ffootball-exercise/app/src/test/java/football/exercise/ResultsTest.java,c\9\c94a1bd1347c32250b19006cdb9b28c7c35e67f6
+n
+>football-exercise/app/src/main/java/football/exercise/App.java,9\a\9ade3563169ee9726b9e3260a54fb48e86f761c7
+u
+Efootball-exercise/app/src/test/java/football/exercise/LeagueTest.java,b\1\b17672034a03fe7fb4b1f7aebe0077a3e0ee6e7b

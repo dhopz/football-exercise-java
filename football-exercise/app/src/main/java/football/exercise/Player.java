@@ -3,8 +3,8 @@ package football.exercise;
 import java.util.Date;
 
 public class Player {
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     private String position;
     private String club;
 
